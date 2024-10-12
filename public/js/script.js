@@ -5,32 +5,37 @@
 //   document.getElementById("table").style.scale = size + "%";
 // });
  
-
 // dropdown
 const dropdownMenu = [
-  { id: 1, title: "โอ๊ค, ฟาง, วีโก้" },
-  { id: 2, title: "เอ" },
-  { id: 3, title: "ไนซ์" }
+  { id: 0, title: "โอ๊ค, ฟาง, วีโก้" },
+  { id: 1, title: "เอ" },
+  { id: 2, title: "ไนซ์" }
 ];
 
-// Set default text on button
-let dropdownSelected = document.getElementById("text-dropdown-btn").innerText = dropdownMenu[0].title; // Default to first item 
+  // Set default text on button
+  let dropdownSelected = 0; // Default to first item 
+  document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected].title; // Set default button text
 
-// menu in dropdown 
-dropdownMenu.forEach((item, index) => {
-  // create menu from dropdownMenu array  
-  const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
+  // Populate dropdown menu and add event listener
+  const dropdownMenuEl = document.getElementById("dropdown-menu");
+  dropdownMenu.forEach((item, index) => {
+    // create menu from dropdownMenu array  
+    const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
+    
+    dropdownMenuEl.innerHTML += dropdownEl; // Add menu items
+  });
 
-  document.getElementById("dropdown-menu").innerHTML += dropdownEl;
-});
+  // Handle dropdown menu selection
+  dropdownMenuEl.addEventListener("click", (e) => {
+    if (e.target.tagName === 'A') {
+      const index = parseInt(e.target.getAttribute('data-index')); // Get selected index
+      document.getElementById("text-dropdown-btn").innerText = e.target.textContent; // Update button text
+      dropdownSelected = index; // Update selected index
+      updateTable(dropdownSelected); // Update the table based on the selection
+      dropdownMenuEl.classList.add("hidden"); // Hide dropdown after selection
+    }
+  });
 
-// Add event listeners after creating all elements
-document.getElementById("dropdown-menu").addEventListener("click", (e) => {
-  if (e.target.tagName === 'A') {
-    document.getElementById("text-dropdown-btn").innerText = e.target.textContent;
-    document.getElementById("dropdown-menu").classList.add("hidden"); 
-  }
-});
 
 // open menu dropdown
 document.getElementById("dropdown-btn").addEventListener("click", (e) => {

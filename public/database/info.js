@@ -14,126 +14,385 @@ const time = [
 
 const subjectList = [
   {
-    day: "Mon",
+    id: 1,
+    title: "โอ๊ค, ฟาง, วีโก้",
     subject: [
       {
-        subject: "Preparatory English",
-        startTime: 3,
-        hours: 2,
-        code: "0041001",
-        section: 57,
-        location: "RN1-805",
-        teacher: "Mr.Brian Akabagy Enyiawah",
-        bg: "#f472b6cc",
-        bgHover: "#BE185D",
-        detail: [
+        day: "Mon",
+        subject: [
           {
-            imgUrl: "../assets/img/teacher/brian.png",
-            department: "คณะสำนักศึกษาทั่วไป",
-            subjectsTaught: "0041001",
-            tel: "043754300"
-          }
+            subject: "Preparatory English",
+            startTime: 3,
+            hours: 2,
+            code: "0041001",
+            section: 57,
+            location: "RN1-805",
+            teacher: "Mr.Brian Akabagy Enyiawah",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+            detail: [
+              {
+                imgUrl: "../assets/img/teacher/brian.png",
+                department: "คณะสำนักศึกษาทั่วไป",
+                subjectsTaught: "0041001",
+                tel: "043754300"
+              }
+            ]
+          },
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 6,
+            hours: 3,
+            code: "1204102",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.จันทิมา พลพินิจ",
+          },
         ]
       },
       {
-        subject: "Math for fComputer System Design and ...",
-        startTime: 6,
-        hours: 3,
-        code: "1204102",
-        section: 1,
-        location: "IT-412",
-        teacher: "รศ.ดร.จันทิมา พลพินิจ",
+        day: "Tue",
+        subject: [
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 2,
+            hours: 3,
+            code: "1204101",
+            section: 3,
+            location: "IT-413",
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา"
+          },
+          {
+            subject: "Digital Society Legal and Ethics...",
+            startTime: 6,
+            hours: 2,
+            code: "1204104",
+            section: 2,
+            location: "IT-412",
+            teacher: "ผศ.ดร.สมนึก พ่วงพรพิทักษ์"
+          },
+        ]
+      },
+      {
+        day: "Wed",
+        subject: [
+          {
+            subject: "Problem Solving for Computer",
+            startTime: 1,
+            hours: 4,
+            code: "1204103",
+            section: 4,
+            location: "IT-402",
+            teacher: "ผศ.ดร.สำรวน เวียงสมุทร"
+          },
+          {
+            subject: "Digital Literacy and Life for Transformation",
+            startTime: 6,
+            hours: 2,
+            code: "0041022",
+            section: 23,
+            location: "SC1-300",
+            teacher: "อ.กวีพจน์ บรรลือวงศ์",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Cultural Management for Value Creation",
+            startTime: 10,
+            hours: 2,
+            code: "0045008",
+            section: 6,
+            location: "EN301",
+            teacher: "ผศ.ดร.เกรียงศักดิ์ บุญเที่ยง, อ.ทม เกตุวงศา, อ.ดร.ยุทธชัย เกราะแก้ว",
+            bg: "#C3B1E1",
+            bgHover: "#A068FF",
+          },
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Creativity and Innovation Man...",
+            startTime: 6,
+            hours: 2,
+            code: "0043002",
+            section: 3,
+            location: "RN1-310",
+            teacher: "ผศ.ดร.นวลละออง อรรถรังสรรค์",
+            bg: "#C2F784",
+            bgHover: "#6EC207",
+          },
+          {
+            subject: "Logical Thinking Based Problem...",
+            startTime: 10,
+            hours: 2,
+            code: "0041025",
+            section: 2,
+            location: "RN1-409",
+            teacher: "อ.ดร.วิชญา รัตนเมธาวี, อ.เลอศักดิ์ โพธิ์ทอง",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+        ]
+      },
+      {
+        day: "Fri",
+        subject: []
       },
     ]
   },
   {
-    day: "Tue",
+    id: 2,
+    title: "เอ",
     subject: [
       {
-        subject: "Math for fComputer System Design and ...",
-        startTime: 2,
-        hours: 3,
-        code: "1204101",
-        section: 3,
-        location: "IT-413",
-        teacher: "รศ.ดร.นัฐธริยา เหล่าประชา"
+        day: "Mon",
+        subject: [
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 2,
+            hours: 3,
+            code: "1204101",
+            section: 1,
+            location: "IT-411",
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา",  
+          },
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 6,
+            hours: 3,
+            code: "1204102",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.จันทิมา พลพินิจ",
+          },
+        ]
       },
       {
-        subject: "Digital Society Legal and Ethics...",
-        startTime: 6,
-        hours: 2,
-        code: "1204104",
-        section: 2,
-        location: "IT-412",
-        teacher: "ผศ.ดร.สมนึก พ่วงพรพิทักษ์"
+        day: "Tue",
+        subject: [
+          {
+            subject: "Digital Society Legal and Ethics...",
+            startTime: 1,
+            hours: 2,
+            code: "1204104",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา"
+          },
+          {
+            subject: "Problem Solving for Computer",
+            startTime: 6,
+            hours: 4,
+            code: "1204103",
+            section: 3,
+            location: "IT-402",
+            teacher: "ผศ.ดร.สำรวน เวียงสมุทร"
+          },
+        ]
+      },
+      {
+        day: "Wed",
+        subject: [
+          {
+            subject: "Problem Solving for Computer",
+            startTime: 6,
+            hours: 2,
+            code: "0041022",
+            section: 23,
+            location: "SC1-300",
+            teacher: "อ.กวีพจน์ บรรลือวงศ์",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Digital Literacy and Life for Transformation",
+            startTime: 6,
+            hours: 2,
+            code: "0041022",
+            section: 23,
+            location: "SC1-300",
+            teacher: "อ.กวีพจน์ บรรลือวงศ์",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Cultural Management for Value Creation",
+            startTime: 10,
+            hours: 2,
+            code: "0045008",
+            section: 6,
+            location: "EN301",
+            teacher: "ผศ.ดร.เกรียงศักดิ์ บุญเที่ยง, อ.ทม เกตุวงศา, อ.ดร.ยุทธชัย เกราะแก้ว",
+            bg: "#C3B1E1",
+            bgHover: "#A068FF",
+          },
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Creativity and Innovation Man...",
+            startTime: 6,
+            hours: 2,
+            code: "0043002",
+            section: 3,
+            location: "RN1-310",
+            teacher: "ผศ.ดร.นวลละออง อรรถรังสรรค์",
+            bg: "#C2F784",
+            bgHover: "#6EC207",
+          },
+          {
+            subject: "Preparatory English",
+            startTime: 3,
+            hours: 2,
+            code: "0041001",
+            section: 50,
+            location: "RN1-601",
+            teacher: "จารย์ไรนะ",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Logical Thinking Based Problem...",
+            startTime: 10,
+            hours: 2,
+            code: "0041025",
+            section: 2,
+            location: "RN1-409",
+            teacher: "อ.ดร.วิชญา รัตนเมธาวี, อ.เลอศักดิ์ โพธิ์ทอง",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+        ]
+      },
+      {
+        day: "Fri",
+        subject: []
       },
     ]
   },
   {
-    day: "Wed",
+    id: 3,
+    title: "ไนซ์",
     subject: [
       {
-        subject: "Problem Solving for Computer",
-        startTime: 1,
-        hours: 4,
-        code: "1204103",
-        section: 4,
-        location: "IT-402",
-        teacher: "ผศ.ดร.สำรวน เวียงสมุทร"
+        day: "Mon",
+        subject: [
+          {
+            subject: "Problem Solving for Computer",
+            startTime: 1,
+            hours: 4,
+            code: "1204103",
+            section: 1,
+            location: "IT-402",
+            teacher: "ผศ.ดร.สำรวน เวียงสมุทร"
+          },
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 6,
+            hours: 3,
+            code: "1204102",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.จันทิมา พลพินิจ",
+          },
+        ]
       },
       {
-        subject: "Digital Literacy and Life for Transformation",
-        startTime: 6,
-        hours: 2,
-        code: "0041022",
-        section: 23,
-        location: "SC1-300",
-        teacher: "อ.กวีพจน์ บรรลือวงศ์",
-        bg: "#f472b6cc",
-        bgHover: "#BE185D",
+        day: "Tue",
+        subject: [
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 2,
+            hours: 3,
+            code: "1204101",
+            section: 3,
+            location: "IT-413",
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา"
+          },
+          {
+            subject: "Digital Society Legal and Ethics...",
+            startTime: 6,
+            hours: 2,
+            code: "1204104",
+            section: 2,
+            location: "IT-412",
+            teacher: "ผศ.ดร.สมนึก พ่วงพรพิทักษ์"
+          },
+        ]
       },
       {
-        subject: "Cultural Management for Value Creation",
-        startTime: 10,
-        hours: 2,
-        code: "0045008",
-        section: 6,
-        location: "EN301",
-        teacher: "ผศ.ดร.เกรียงศักดิ์ บุญเที่ยง, อ.ทม เกตุวงศา, อ.ดร.ยุทธชัย เกราะแก้ว",
-        bg: "#C3B1E1",
-        bgHover: "#A068FF",
+        day: "Wed",
+        subject: [
+          {
+            subject: "Digital Literacy and Life for Transformation",
+            startTime: 6,
+            hours: 2,
+            code: "0041022",
+            section: 23,
+            location: "SC1-300",
+            teacher: "อ.กวีพจน์ บรรลือวงศ์",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Cultural Management for Value Creation",
+            startTime: 10,
+            hours: 2,
+            code: "0045008",
+            section: 6,
+            location: "EN301",
+            teacher: "ผศ.ดร.เกรียงศักดิ์ บุญเที่ยง, อ.ทม เกตุวงศา, อ.ดร.ยุทธชัย เกราะแก้ว",
+            bg: "#C3B1E1",
+            bgHover: "#A068FF",
+          },
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Preparatory English",
+            startTime: 3,
+            hours: 2,
+            code: "0041001",
+            section: 50,
+            location: "RN1-601",
+            teacher: "จารย์ไรนะ",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+          {
+            subject: "Creativity and Innovation Man...",
+            startTime: 6,
+            hours: 2,
+            code: "0043002",
+            section: 3,
+            location: "RN1-310",
+            teacher: "ผศ.ดร.นวลละออง อรรถรังสรรค์",
+            bg: "#C2F784",
+            bgHover: "#6EC207",
+          },
+          {
+            subject: "Logical Thinking Based Problem...",
+            startTime: 10,
+            hours: 2,
+            code: "0041025",
+            section: 2,
+            location: "RN1-409",
+            teacher: "อ.ดร.วิชญา รัตนเมธาวี, อ.เลอศักดิ์ โพธิ์ทอง",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+        ]
+      },
+      {
+        day: "Fri",
+        subject: []
       },
     ]
-  },
-  {
-    day: "Thu",
-    subject: [
-      {
-        subject: "Creativity and Innovation Man...",
-        startTime: 6,
-        hours: 2,
-        code: "0043002",
-        section: 3,
-        location: "RN1-310",
-        teacher: "ผศ.ดร.นวลละออง อรรถรังสรรค์",
-        bg: "#C2F784",
-        bgHover: "#6EC207",
-      },
-      {
-        subject: "Logical Thinking Based Problem...",
-        startTime: 10,
-        hours: 2,
-        code: "0041025",
-        section: 2,
-        location: "RN1-409",
-        teacher: "อ.ดร.วิชญา รัตนเมธาวี, อ.เลอศักดิ์ โพธิ์ทอง",
-        bg: "#f472b6cc",
-        bgHover: "#BE185D",
-      },
-    ]
-  },
-  {
-    day: "Fri",
-    subject: []
-  },
+  }
 ];
