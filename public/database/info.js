@@ -465,7 +465,7 @@ const subjectList = [
         day: "Thu",
         subject: [
           {
-            subject: "Application Software for Digital Office",
+            subject: "โปรแกรมประยุกต์สำหรับงานดิจิทัล",
             startTime: 3,
             hours: 2,
             code: "0041024",
@@ -476,7 +476,7 @@ const subjectList = [
             bgHover: "#6EC207",
           },
           {
-            subject: "Karaoke",
+            subject: "คาราโอเกะ",
             startTime: 8,
             hours: 2,
             code: "2011132",
@@ -492,7 +492,7 @@ const subjectList = [
         day: "Fri",
         subject: [
           {
-            subject: "Digital Literacy and Life for Transformation",
+            subject: "ทักษะเเละชีวิตดิจิทัลเพื่อการเปลี่ยนเเปลง",
             startTime: 8,
             hours: 2,
             code: "0041022",
@@ -503,7 +503,7 @@ const subjectList = [
             bgHover: "#6EC207",
           },
           {
-            subject: "Local Wisdom Based Food and Beverages",
+            subject: "อาหารเเละเครื่องดื่มจากภูมิปัญญาพื้นบ้าน",
             startTime: 10,
             hours: 2,
             code: "0045010",
