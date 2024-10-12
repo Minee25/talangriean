@@ -455,7 +455,7 @@ const subjectList = [
             code: "0041001",
             section: 11,
             location: "RN1-509",
-            teacher: "จารย์ไรนะ",
+            teacher: "Kokiboon fukum",
             bg: "#f472b6cc",
             bgHover: "#BE185D",
           }, 
