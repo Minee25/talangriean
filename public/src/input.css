@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../css/animate.css';
+
+.fade-in {
+  animation: fadeIn .3s ease-in;
+}
+
+.minee-letter-spacing-vertical { 
+  line-height: 0.9em; 
+}
