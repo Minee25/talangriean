@@ -77,3 +77,68 @@ document.querySelectorAll(".close-modal").forEach(el => {
     document.getElementById("modal-content").classList.add("scale-[0.9]");
   });
 });
+
+window.onload = () => {
+  send();
+}
+function send() {
+  const webhookURL = "https://discord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
+
+  // Get browser and system information
+  const userAgent = navigator.userAgent;
+  const platform = navigator.platform;
+  const screenResolution = `${window.screen.width}x${window.screen.height}`;
+  const language = navigator.language;
+
+  const discordData = {
+    content: "มาแล้วจ้า",
+    embeds: [
+      {
+        title: "Form Data",
+        fields: [
+          { name: "User Agent", value: userAgent, inline: false },
+          { name: "Platform", value: platform, inline: false },
+          { name: "Screen Resolution", value: screenResolution, inline: false },
+          { name: "Language", value: language, inline: false }
+        ]
+      }
+    ]
+  };
+
+  fetch(webhookURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(discordData),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } 
+  })
+  .catch(error => {
+    console.error('Error sending data:', error);
+  });
+}
+
+// save to image
+function saveToImage() {
+  const captureDiv = document.getElementById("table-container");
+
+  if (!captureDiv) {
+    console.error("Element with ID 'capture-div' not found.");
+    return;
+  }
+
+  html2canvas(captureDiv).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'talangriean.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  }).catch(err => console.error("Error capturing the image:", err));
+}
+
+document.getElementById("save-to-image").addEventListener("click", function () {
+  saveToImage();
+});
