@@ -10,7 +10,7 @@ function updateTable(index) {
     for (let i = 1; i <= 11; i++) {
       dayContent += `
         <span class="relative">
-          <span style="${i == 5 ? 'border-bottom-width: 0px;' : ""} ${index == subjectList.length + 1 ? "border-bottom-width: 0px" : ""}" class="block w-24 h-20 p-2 border-l-2 border-b-2 border-black/10"></span>
+          <span style="${i == 5 ? 'border-bottom-width: 0px;' : ""} ${index == subjectList.length ? "border-bottom-width: 0px" : ""}" class="block w-24 h-20 p-2 border-l-2 border-b-2 border-black/10"></span>
           ${day.subject.some(subject => subject.startTime === i) ?
           day.subject
               .filter(subject => subject.startTime === i)
