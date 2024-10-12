@@ -9,7 +9,7 @@ const time = [
   "15:00 - 16:00",
   "16:00 - 17:00",
   "17:00 - 18:00",
-  "18:00 - 19:00", 
+  "18:00 - 19:00",
 ];
 
 const subjectList = [
@@ -156,7 +156,7 @@ const subjectList = [
             code: "1204101",
             section: 1,
             location: "IT-411",
-            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา",  
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา",
           },
           {
             subject: "Math for Computer System Design and ...",
@@ -394,5 +394,127 @@ const subjectList = [
         subject: []
       },
     ]
-  }
+  },
+  {
+    id: 4,
+    title: "ม่อน",
+    subject: [
+      {
+        day: "Mon",
+        subject: [
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 6,
+            hours: 3,
+            code: "1204102",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.จันทิมา พลพินิจ",
+          },
+        ]
+      },
+      {
+        day: "Tue",
+        subject: [
+          {
+            subject: "Math for Computer System Design and ...",
+            startTime: 2,
+            hours: 3,
+            code: "1204101",
+            section: 3,
+            location: "IT-413",
+            teacher: "รศ.ดร.นัฐธริยา เหล่าประชา"
+          },
+          {
+            subject: "Digital Society Legal and Ethics...",
+            startTime: 6,
+            hours: 2,
+            code: "1204104",
+            section: 2,
+            location: "IT-412",
+            teacher: "ผศ.ดร.สมนึก พ่วงพรพิทักษ์"
+          },
+        ]
+      },
+      {
+        day: "Wed",
+        subject: [
+          {
+            subject: "Problem Solving for Computer",
+            startTime: 1,
+            hours: 4,
+            code: "1204103",
+            section: 4,
+            location: "IT-402",
+            teacher: "ผศ.ดร.สำรวน เวียงสมุทร"
+          },
+          {
+            subject: "Preparatory English",
+            startTime: 6,
+            hours: 2,
+            code: "0041001",
+            section: 11,
+            location: "RN1-509",
+            teacher: "จารย์ไรนะ",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          }, 
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Application Software for Digital Office",
+            startTime: 3,
+            hours: 2,
+            code: "0041024",
+            section: 2,
+            location: "SC2-102",
+            teacher: "นภัสกร กรวยสวัสดิ์",
+            bg: "#C2F784",
+            bgHover: "#6EC207",
+          },
+          {
+            subject: "Karaoke",
+            startTime: 8,
+            hours: 2,
+            code: "2011132",
+            section: 3,
+            location: "MU300",
+            teacher: "สัญชัย ด้วงบุ้ง",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+        ]
+      },
+      {
+        day: "Fri",
+        subject: [
+          {
+            subject: "Digital Literacy and Life for Transformation",
+            startTime: 8,
+            hours: 2,
+            code: "0041022",
+            section: 25,
+            location: "SC1-100",
+            teacher: "ธวัชวงศ์ ลาวัลย์",
+            bg: "#C2F784",
+            bgHover: "#6EC207",
+          },
+          {
+            subject: "Local Wisdom Based Food and Beverages",
+            startTime: 10,
+            hours: 2,
+            code: "0045010",
+            section: 11,
+            location: "SC2-107",
+            teacher: "นิจฉรา ทูลธรรม",
+            bg: "#f472b6cc",
+            bgHover: "#BE185D",
+          },
+        ]
+      },
+    ]
+  },
 ];
