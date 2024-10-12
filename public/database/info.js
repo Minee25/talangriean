@@ -1,16 +1,15 @@
 const time = [
-  "08:00",
-  "09:00",
-  "10:00",
-  "11:00",
-  "12:00",
-  "13:00",
-  "14:00",
-  "15:00",
-  "16:00",
-  "17:00",
-  "18:00",
-  "19:00"
+  "08:00 - 09:00",
+  "09:00 - 10:00",
+  "10:00 - 11:00",
+  "11:00 - 12:00",
+  "12:00 - 13:00",
+  "13:00 - 14:00",
+  "14:00 - 15:00",
+  "15:00 - 16:00",
+  "16:00 - 17:00",
+  "17:00 - 18:00",
+  "18:00 - 19:00", 
 ];
 
 const subjectList = [
@@ -24,12 +23,15 @@ const subjectList = [
         code: "0041001",
         section: 57,
         location: "RN1-805",
-        teacher: "Mr. Brian Akabagy Enyiawah",
+        teacher: "Mr.Brian Akabagy Enyiawah",
         bg: "#f472b6cc",
         bgHover: "#BE185D",
         detail: [
           {
-            
+            imgUrl: "../assets/img/teacher/brian.png",
+            department: "คณะสำนักศึกษาทั่วไป",
+            subjectsTaught: "0041001",
+            tel: "043754300"
           }
         ]
       },
@@ -92,7 +94,7 @@ const subjectList = [
       },
       {
         subject: "Cultural Management for Value Creation",
-        startTime: 11,
+        startTime: 10,
         hours: 2,
         code: "0045008",
         section: 6,
@@ -119,7 +121,7 @@ const subjectList = [
       },
       {
         subject: "Logical Thinking Based Problem...",
-        startTime: 11,
+        startTime: 10,
         hours: 2,
         code: "0041025",
         section: 2,

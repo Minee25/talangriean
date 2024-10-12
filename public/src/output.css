@@ -636,10 +636,6 @@ video {
   top: 0.75rem;
 }
 
-.start-0 {
-  inset-inline-start: 0px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -688,10 +684,6 @@ video {
 
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -790,10 +782,6 @@ video {
   width: 2rem;
 }
 
-.w-\[200\%\] {
-  width: 200%;
-}
-
 .w-full {
   width: 100%;
 }
@@ -848,16 +836,8 @@ video {
   flex-direction: column;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1035,16 +1015,16 @@ video {
   text-align: center;
 }
 
-.text-start {
-  text-align: start;
-}
-
 .font-IPST {
   font-family: IBM Plex Sans Thai, sans-serif;
 }
 
-.text-\[12px\] {
-  font-size: 12px;
+.text-\[11px\] {
+  font-size: 11px;
+}
+
+.text-\[2px\] {
+  font-size: 2px;
 }
 
 .text-lg {
@@ -1057,26 +1037,28 @@ video {
   line-height: 1.25rem;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-\[11px\] {
-  font-size: 11px;
-}
-
-.text-\[1px\] {
-  font-size: 1px;
+.text-\[6px\] {
+  font-size: 6px;
 }
 
 .text-\[10px\] {
   font-size: 10px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .font-medium {
@@ -1104,6 +1086,11 @@ video {
   color: rgb(0 0 0 / 0.3);
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1129,14 +1116,16 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
+.text-black\/80 {
+  color: rgb(0 0 0 / 0.8);
 }
 
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
+.text-black\/50 {
+  color: rgb(0 0 0 / 0.5);
+}
+
+.text-black\/60 {
+  color: rgb(0 0 0 / 0.6);
 }
 
 .underline {
@@ -1275,16 +1264,6 @@ video {
 .active\:ring-blue-300:active {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity));
-}
-
-@media (min-width: 640px) {
-  .sm\:items-end {
-    align-items: flex-end;
-  }
-
-  .sm\:justify-between {
-    justify-content: space-between;
-  }
 }
 
 @media (min-width: 768px) {

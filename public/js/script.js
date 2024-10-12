@@ -14,21 +14,22 @@ const dropdownMenu = [
 ];
 
 // Set default text on button
-document.getElementById("text-dropdown-btn").innerText = dropdownMenu[0].title; // Default to first item
+let dropdownSelected = document.getElementById("text-dropdown-btn").innerText = dropdownMenu[0].title; // Default to first item 
 
 // menu in dropdown 
-dropdownMenu.forEach(item => {
-  // create menu from dropdownMenu array
-  const el = document.createElement('a');
-  el.href = "#";
-  el.className = "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200";
-  el.textContent = item.title;
+dropdownMenu.forEach((item, index) => {
+  // create menu from dropdownMenu array  
+  const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
 
-  document.getElementById("dropdown-menu").appendChild(el);
-  el.addEventListener("click", (e) => {
+  document.getElementById("dropdown-menu").innerHTML += dropdownEl;
+});
+
+// Add event listeners after creating all elements
+document.getElementById("dropdown-menu").addEventListener("click", (e) => {
+  if (e.target.tagName === 'A') {
     document.getElementById("text-dropdown-btn").innerText = e.target.textContent;
-    document.getElementById("dropdown-menu").classList.add("hidden");
-  });
+    document.getElementById("dropdown-menu").classList.add("hidden"); 
+  }
 });
 
 // open menu dropdown
