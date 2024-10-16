@@ -1,59 +1,150 @@
-// Function to update table content based on the selected subject
-function updateTable(index) {
-  const tableContainerEl = document.getElementById("table-container");
-  let tableContent = '';
+// auto scale 
 
-  const selectedSubject = subjectList[index].subject; // Get subjects based on selection
+window.addEventListener("resize", () => {
+  let size = window.innerWidth;
+  if (size <= 1120) {
+    document.getElementById("tabel-responsive").style.scale = (size / 12) + "%"; 
+  } else {
+    document.getElementById("tabel-responsive").style.scale = "1"; 
 
-  selectedSubject.forEach((day, index) => {
-    let dayContent = ''; 
-    for (let i = 1; i <= 11; i++) {
-      dayContent += `
-        <span class="relative">
-          <span style="${i == 5 ? 'border-bottom-width: 0px;' : ""} ${index == subjectList.length ? "border-bottom-width: 0px" : ""}" class="block w-24 h-20 p-2 border-l-2 border-b-2 border-black/10"></span>
-          ${day.subject.some(subject => subject.startTime === i) ?
-          day.subject
-              .filter(subject => subject.startTime === i)
-              .map(subject => `
-                <div class="absolute w-full h-full top-0">
-                  <div style="width: ${subject.hours * 100}%" class="relative h-full z-10 p-2 text-[11px] leading-[14px] font-normal">
-                    <div
-                      onclick="${null}"
-                      style="background: ${subject.bg};"
-                      onmouseover="this.style.backgroundColor = '${subject.bgHover}'; this.style.color = '#FFFFFFF2';"
-                      onmouseout="this.style.backgroundColor = '${subject.bg}'; this.style.color = '#000000';"
-                      class="relative bg-[#FFF8D2] text-black cursor-pointer rounded-lg overflow-hidden border-2 border-black/10 h-full w-full p-1 text-center shadow-md hover:bg-[#FFD700] transition-all duration-200">
-                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.subject}</p>
-                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.code} sec ${subject.section}</p>
-                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.location}</p>
-                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher}</p>
-                    </div>
-                  </div>
-                </div>
-              `).join('')
-          : ""}
-        </span>`;
+  }
+});
+
+// dropdown
+const dropdownMenu = [
+  { id: 0, title: "โอ๊ค, ฟาง, วีโก้" },
+  { id: 1, title: "เอ" },
+  { id: 2, title: "ไนซ์" },
+  { id: 3, title: "ม่อน" },
+];
+
+// Set default text on button
+let dropdownSelected = 0; // Default to first item 
+document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected].title; // Set default button text
+
+// Populate dropdown menu and add event listener
+const dropdownMenuEl = document.getElementById("dropdown-menu");
+dropdownMenu.forEach((item, index) => {
+  // create menu from dropdownMenu array  
+  const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
+
+  dropdownMenuEl.innerHTML += dropdownEl; // Add menu items
+});
+
+// Handle dropdown menu selection
+dropdownMenuEl.addEventListener("click", (e) => {
+  if (e.target.tagName === 'A') {
+    const index = parseInt(e.target.getAttribute('data-index')); // Get selected index
+    document.getElementById("text-dropdown-btn").innerText = e.target.textContent; // Update button text
+    dropdownSelected = index; // Update selected index
+    updateTable(dropdownSelected); // Update the table based on the selection
+    dropdownMenuEl.classList.add("hidden"); // Hide dropdown after selection
+  }
+});
+
+// open menu dropdown
+document.getElementById("dropdown-btn").addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevent click event from propagating to the document
+  const dropdownMenu = document.getElementById("dropdown-menu");
+
+  dropdownMenu.classList.toggle("hidden");
+
+  if (!dropdownMenu.classList.contains("hidden")) {
+    document.addEventListener("click", closeDropdownOnClickOutside);
+    // click outside dropdown for close
+    function closeDropdownOnClickOutside(e) {
+      const dropdownMenu = document.getElementById("dropdown-menu");
+      const dropdownBtn = document.getElementById("dropdown-btn");
+
+      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        dropdownMenu.classList.add("hidden");
+        document.removeEventListener("click", closeDropdownOnClickOutside); // Remove event listener after dropdown is closed
+      }
     }
+  }
+});
 
-    tableContent += `
-      <span class="grid grid-flow-col">
-        <span class="bg-[#253442] w-16 text-white border-b-2 border-black/10 flex items-center justify-center">${day.day}</span>
-        ${dayContent}
-      </span>`;
+// ********** modal **********
+// open
+document.getElementById("open-model-btn").addEventListener("click", () => {
+  document.getElementById("modal").classList.remove("invisible");
+  document.getElementById("modal").classList.remove("opacity-0");
+  document.getElementById("modal").classList.add("opacity-100");
+  document.getElementById("modal-content").classList.remove("scale-[0.9]");
+});
+
+// close
+document.querySelectorAll(".close-modal").forEach(el => {
+  el.addEventListener("click", () => {
+    document.getElementById("modal").classList.add("opacity-0");
+    document.getElementById("modal").classList.remove("opacity-100");
+    document.getElementById("modal").classList.add("invisible");
+    document.getElementById("modal-content").classList.add("scale-[0.9]");
   });
+});
 
-  tableContainerEl.innerHTML = `
-    <div id="table" class="rounded-2xl overflow-hidden min-h-[4rem] max-w-[1124] bg-white/60 shadow-xl border-2 border-white/80 text-black/50">
-      <div class="grid grid-flow-col text-center">
-        <span class="bg-[#FFC736] w-16"></span>
-        ${time.map(item => `
-          <span class="bg-[#FFC736] w-24 p-2 border-2 border-t-0 border-r-0 border-black/10 text-[12px]">${item}</span>
-        `).join('')}
-      </div>
-      ${tableContent}
-    </div>
-  `;
+window.onload = () => {
+  send();
 }
 
-// Initialize the table with the default selection
-updateTable(dropdownSelected);
+function send() {
+  const webhookURL = "https://discord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
+
+  // Get browser and system information
+  const userAgent = navigator.userAgent;
+  const platform = navigator.platform;
+  const screenResolution = `${window.screen.width}x${window.screen.height}`;
+  const language = navigator.language;
+
+  const discordData = {
+    content: "มาแล้วจ้า",
+    embeds: [
+      {
+        title: "Form Data",
+        fields: [
+          { name: "User Agent", value: userAgent, inline: false },
+          { name: "Platform", value: platform, inline: false },
+          { name: "Screen Resolution", value: screenResolution, inline: false },
+          { name: "Language", value: language, inline: false }
+        ]
+      }
+    ]
+  };
+
+  fetch(webhookURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(discordData),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error sending data:', error);
+    });
+}
+
+// save to image
+function saveToImage() {
+  const captureDiv = document.getElementById("table-container");
+
+  if (!captureDiv) {
+    console.error("Element with ID 'capture-div' not found.");
+    return;
+  }
+
+  html2canvas(captureDiv).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'talangriean.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  }).catch(err => console.error("Error capturing the image:", err));
+}
+
+document.getElementById("save-to-image").addEventListener("click", function () {
+  saveToImage();
+});
