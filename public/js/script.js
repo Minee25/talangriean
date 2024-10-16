@@ -1,13 +1,18 @@
 // auto scale 
 
 window.addEventListener("resize", () => {
+  tableResponsive();
+}); 
+
+tableResponsive();
+function tableResponsive() {
   let size = window.innerWidth;
   if (size <= 1120) {
-    document.getElementById("tabel-responsive").style.scale = (size / 12) + "%"; 
+    return document.getElementById("tabel-responsive").style.scale = (size / 12) + "%"; 
   } else {
-    document.getElementById("tabel-responsive").style.scale = "1"; 
+    return document.getElementById("tabel-responsive").style.scale = "1"; 
   }
-});
+}
 
 // dropdown
 const dropdownMenu = [
