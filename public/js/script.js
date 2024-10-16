@@ -1,10 +1,14 @@
-// auto scale
+// auto scale 
 
-// window.addEventListener("resize", () => {
-//   let size = window.innerWidth;
-//   document.getElementById("table").style.scale = size + "%";
-// });
- 
+window.addEventListener("resize", () => {
+  let size = window.innerWidth;
+  if (size <= 1120) {
+    document.getElementById("tabel-responsive").style.scale = (size / 12) + "%"; 
+  } else {
+    document.getElementById("tabel-responsive").style.scale = "1"; 
+  }
+});
+
 // dropdown
 const dropdownMenu = [
   { id: 0, title: "โอ๊ค, ฟาง, วีโก้" },
@@ -13,30 +17,29 @@ const dropdownMenu = [
   { id: 3, title: "ม่อน" },
 ];
 
-  // Set default text on button
-  let dropdownSelected = 0; // Default to first item 
-  document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected].title; // Set default button text
+// Set default text on button
+let dropdownSelected = 0; // Default to first item 
+document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected].title; // Set default button text
 
-  // Populate dropdown menu and add event listener
-  const dropdownMenuEl = document.getElementById("dropdown-menu");
-  dropdownMenu.forEach((item, index) => {
-    // create menu from dropdownMenu array  
-    const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
-    
-    dropdownMenuEl.innerHTML += dropdownEl; // Add menu items
-  });
+// Populate dropdown menu and add event listener
+const dropdownMenuEl = document.getElementById("dropdown-menu");
+dropdownMenu.forEach((item, index) => {
+  // create menu from dropdownMenu array  
+  const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
 
-  // Handle dropdown menu selection
-  dropdownMenuEl.addEventListener("click", (e) => {
-    if (e.target.tagName === 'A') {
-      const index = parseInt(e.target.getAttribute('data-index')); // Get selected index
-      document.getElementById("text-dropdown-btn").innerText = e.target.textContent; // Update button text
-      dropdownSelected = index; // Update selected index
-      updateTable(dropdownSelected); // Update the table based on the selection
-      dropdownMenuEl.classList.add("hidden"); // Hide dropdown after selection
-    }
-  });
+  dropdownMenuEl.innerHTML += dropdownEl; // Add menu items
+});
 
+// Handle dropdown menu selection
+dropdownMenuEl.addEventListener("click", (e) => {
+  if (e.target.tagName === 'A') {
+    const index = parseInt(e.target.getAttribute('data-index')); // Get selected index
+    document.getElementById("text-dropdown-btn").innerText = e.target.textContent; // Update button text
+    dropdownSelected = index; // Update selected index
+    updateTable(dropdownSelected); // Update the table based on the selection
+    dropdownMenuEl.classList.add("hidden"); // Hide dropdown after selection
+  }
+});
 
 // open menu dropdown
 document.getElementById("dropdown-btn").addEventListener("click", (e) => {
@@ -82,6 +85,7 @@ document.querySelectorAll(".close-modal").forEach(el => {
 window.onload = () => {
   send();
 }
+
 function send() {
   const webhookURL = "https://discord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
 
@@ -113,14 +117,14 @@ function send() {
     },
     body: JSON.stringify(discordData),
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    } 
-  })
-  .catch(error => {
-    console.error('Error sending data:', error);
-  });
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error sending data:', error);
+    });
 }
 
 // save to image
