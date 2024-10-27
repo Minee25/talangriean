@@ -10,7 +10,7 @@ const time = [
   "16:00 - 17:00",
   "17:00 - 18:00",
   "18:00 - 19:00",
-];
+]; 
 
 const subjectList = [
   {
@@ -32,10 +32,12 @@ const subjectList = [
             bgHover: "#BE185D",
             detail: [
               {
-                imgUrl: "../assets/img/teacher/brian.png",
+                imgUrl: "brian.jpg",
                 department: "คณะสำนักศึกษาทั่วไป",
                 subjectsTaught: "0041001",
-                tel: "043754300"
+                gmail: "123@msu.ac.th",
+                tel: "043754300",
+                classRoomLink: "https://classroom.google.com/c/Njk1NDM3MTI2MDEz"
               }
             ]
           },

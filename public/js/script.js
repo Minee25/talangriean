@@ -1,18 +1,20 @@
-// auto scale 
-
+// responsive table with auto scale 
 window.addEventListener("resize", () => {
   tableResponsive();
-}); 
+});
 
 tableResponsive();
 function tableResponsive() {
   let size = window.innerWidth;
   if (size <= 1120) {
-    return document.getElementById("tabel-responsive").style.scale = (size / 12) + "%"; 
+    document.getElementById("tabel-responsive").style.scale = (size / 12) + "%";
+    // document.getElementById("tabel-responsive").style.transform = `translateY(${(size - 1120) * 0.5}px)`;
   } else {
-    return document.getElementById("tabel-responsive").style.scale = "1"; 
+    document.getElementById("tabel-responsive").style.scale = "1";
+    document.getElementById("tabel-responsive").style.transform = "translateY(0%)";
   }
 }
+
 
 // dropdown
 const dropdownMenu = [
@@ -88,7 +90,7 @@ document.querySelectorAll(".close-modal").forEach(el => {
 });
 
 window.onload = () => {
-  send();
+  // send();
 }
 
 function send() {
