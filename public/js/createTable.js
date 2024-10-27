@@ -76,7 +76,7 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
 
   document.getElementById("model-detail").innerHTML = `
   <div id="model-detail-bg" class="bg-[#0000004d] absolute duration-300 w-full h-full top-0 left-0"></div>
-  <div id="model-detail-content" class="relative duration-300 z-10 bg-[#ffffffe2] rounded-lg p-4 shadow-lg w-full min-h-full flex flex-col justify-center items-center">
+  <div id="model-detail-content" class="relative duration-300 ease-out z-10 bg-[#ffffffe2] rounded-lg p-4 shadow-lg w-full min-h-full flex flex-col justify-center items-center">
     <button id="close-model" class="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 hover:bg-gray-300 rounded-lg" onclick="closeModel()">
       <svg class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
