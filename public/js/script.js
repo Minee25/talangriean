@@ -90,7 +90,7 @@ document.querySelectorAll(".close-modal").forEach(el => {
 });
 
 window.onload = () => {
-  // send();
+  send();
 }
 
 function send() {
