@@ -17,54 +17,55 @@ function tableResponsive() {
 
 
 // dropdown
-const dropdownMenu = [
-  { id: 0, title: "โอ๊ค, ฟาง, วีโก้" },
-  { id: 1, title: "เอ" },
-  { id: 2, title: "ไนซ์" },
-  { id: 3, title: "ม่อน" },
-];
+const dropdownMenu = subjectList.map(item => item.title);
 
-// Set default text on button
-let dropdownSelected = 0; // Default to first item 
-document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected].title; // Set default button text
+let dropdownSelected = 0; 
+document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected];
 
-// Populate dropdown menu and add event listener
 const dropdownMenuEl = document.getElementById("dropdown-menu");
-dropdownMenu.forEach((item, index) => {
-  // create menu from dropdownMenu array  
-  const dropdownEl = `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item.title}</a>`;
+let dropdownHTML = ''; 
 
-  dropdownMenuEl.innerHTML += dropdownEl; // Add menu items
+dropdownMenu.forEach((item, index) => {
+  dropdownHTML += `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item}</a>`;
 });
+
+dropdownMenuEl.innerHTML = dropdownHTML;
+
+dropdownMenuEl.addEventListener('click', (event) => {
+  if (event.target.matches('a')) {
+    dropdownSelected = parseInt(event.target.getAttribute('data-index'));
+    document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected];
+  }
+});
+
 
 // Handle dropdown menu selection
 dropdownMenuEl.addEventListener("click", (e) => {
   if (e.target.tagName === 'A') {
-    const index = parseInt(e.target.getAttribute('data-index')); // Get selected index
-    document.getElementById("text-dropdown-btn").innerText = e.target.textContent; // Update button text
-    dropdownSelected = index; // Update selected index
-    updateTable(dropdownSelected); // Update the table based on the selection
-    dropdownMenuEl.classList.add("hidden"); // Hide dropdown after selection
+    const index = parseInt(e.target.getAttribute('data-index'));
+    document.getElementById("text-dropdown-btn").innerText = e.target.textContent;
+    dropdownSelected = index;
+    updateTable(dropdownSelected); 
+    dropdownMenuEl.classList.add("hidden");
   }
 });
 
 // open menu dropdown
 document.getElementById("dropdown-btn").addEventListener("click", (e) => {
-  e.stopPropagation(); // Prevent click event from propagating to the document
+  e.stopPropagation(); 
   const dropdownMenu = document.getElementById("dropdown-menu");
 
   dropdownMenu.classList.toggle("hidden");
 
   if (!dropdownMenu.classList.contains("hidden")) {
     document.addEventListener("click", closeDropdownOnClickOutside);
-    // click outside dropdown for close
     function closeDropdownOnClickOutside(e) {
       const dropdownMenu = document.getElementById("dropdown-menu");
       const dropdownBtn = document.getElementById("dropdown-btn");
 
       if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
         dropdownMenu.classList.add("hidden");
-        document.removeEventListener("click", closeDropdownOnClickOutside); // Remove event listener after dropdown is closed
+        document.removeEventListener("click", closeDropdownOnClickOutside);
       }
     }
   }

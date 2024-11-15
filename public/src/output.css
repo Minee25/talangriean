@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -550,7 +550,7 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden]:where(:not([hidden="until-found"])) {
+[hidden] {
   display: none;
 }
 
@@ -620,8 +620,8 @@ video {
   inset: 0px;
 }
 
-.bottom-1\/2 {
-  bottom: 50%;
+.bottom-\[60\%\] {
+  bottom: 60%;
 }
 
 .end-2\.5 {
@@ -640,16 +640,16 @@ video {
   top: 0px;
 }
 
-.top-1\/2 {
-  top: 50%;
-}
-
 .top-3 {
   top: 0.75rem;
 }
 
 .top-\[0\] {
   top: 0;
+}
+
+.top-\[60\%\] {
+  top: 60%;
 }
 
 .z-10 {
@@ -867,13 +867,13 @@ video {
   transform-origin: top right;
 }
 
-.translate-x-\[-30\%\] {
-  --tw-translate-x: -30%;
+.translate-x-\[-40\%\] {
+  --tw-translate-x: -40%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-x-\[30\%\] {
-  --tw-translate-x: 30%;
+.translate-x-\[40\%\] {
+  --tw-translate-x: 40%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1006,6 +1006,14 @@ video {
   border-color: rgb(255 255 255 / 0.8);
 }
 
+.border-black\/30 {
+  border-color: rgb(0 0 0 / 0.3);
+}
+
+.border-black\/5 {
+  border-color: rgb(0 0 0 / 0.05);
+}
+
 .bg-\[\#0000004d\] {
   background-color: #0000004d;
 }
@@ -1023,10 +1031,6 @@ video {
 .bg-\[\#FFF8D2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 248 210 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#ffd90057\] {
-  background-color: #ffd90057;
 }
 
 .bg-\[\#ffffffe2\] {
@@ -1070,10 +1074,6 @@ video {
      object-fit: cover;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -1100,6 +1100,11 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1160,16 +1165,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -1330,8 +1325,8 @@ video {
   transition-duration: 300ms;
 }
 
-.duration-100 {
-  transition-duration: 100ms;
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .ease-out {

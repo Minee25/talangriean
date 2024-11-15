@@ -29,14 +29,14 @@ function updateTable(index) {
                       style="background: ${subject.bg};"
                       onmouseover="this.style.backgroundColor = '${subject.bgHover}'; this.style.color = '#FFFFFFF2';"
                       onmouseout="this.style.backgroundColor = '${subject.bg}'; this.style.color = '#000000';"
-                      class="relative bg-[#FFF8D2] text-black cursor-pointer rounded-lg overflow-hidden border-2 border-black/10 h-full w-full p-1 text-center shadow-md hover:bg-[#FFD700] transition-all duration-200">
+                      class="relative bg-[#FFF8D2] text-black cursor-pointer rounded-lg overflow-hidden border-2 border-black/5 h-full w-full py-1 px-4 text-center shadow-md hover:bg-[#FFD700] transition-all duration-200">
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.subject}</p>
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.code} sec ${subject.section}</p>
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.location}</p>
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher}</p>
 
-                      <div class="absolute w-10 h-10 top-1/2 right-0 transition-all duration-200 translate-x-[30%] rounded-full drop-shadow-pr-shadow-text bg-[#ffd90057]"></div>
-                      <div class="absolute w-10 h-10 bottom-1/2 left-0 transition-all duration-200 translate-x-[-30%] rounded-full drop-shadow-pr-shadow-text bg-[#ffd90057]"></div>
+                      <div class="absolute w-10 h-10 top-[60%] right-0 transition-all duration-200 translate-x-[40%] rounded-full drop-shadow-pr-shadow-text" style="background-color: ${subject.bgHover}55;"></div>
+                      <div class="absolute w-10 h-10 bottom-[60%] left-0 transition-all duration-200 translate-x-[-40%] rounded-full drop-shadow-pr-shadow-text" style="background-color: ${subject.bgHover}55;"></div>
                     </div>  
                   </div>
                 </div>
@@ -83,14 +83,14 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
       </svg>
     </button>
 
-    <div class="flex flex-col items-center min-h-full justify-center">
+    <div class="flex flex-col items-center min-h-full justify-center text-center">
       <h1 class="text-2xl font-bold mb-4 text-center">รายละเอียดวิชา</h1> 
-      <img src="./assets/img/teachers/${subjectImgUrl}" alt="Teacher Image" class="w-48 h-48 object-cover border-4 border-gray-300 rounded-full mb-4 shadow-md" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
-      <p class="text-base text-gray-600">${subjectTeacher}</p>
+      <div>
+        <img src="./assets/img/teachers/${subjectImgUrl}" alt="Teacher Image" class="w-48 h-48 object-cover border-4 border-gray-300 rounded-full mb-4 shadow-md" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
+      </div>
+      <p class="text-base text-gray-600">${subjectTeacher.replace(/, /g, '<br>')}</p>
       <hr class="my-4 border-t border-gray-600 w-full">
-      <h2 class="text-lg font-semibold mb-1 text-gray-800">${subjectSubject}</h2> 
-      <p class="text-base text-gray-600 mb-2">ภาควิชา: <span class="font-medium">${subjectDepartment}</span></p>
-      <p class="text-base text-gray-600 mb-2">วิชาที่สอน: <span class="font-medium">${subjectSubjectsTaught} </span></p>
+      <h2 class="text-lg font-semibold mb-1 text-gray-800">${subjectSubject}</h2>  
       <p class="text-base text-gray-600 mb-2">Gmail: <span class="font-medium">${subjectGmail}</span></p>   
       <p class="text-base text-gray-600 mb-2">โทรศัพท์: <span class="font-medium">${subjectTel}</span></p>  
       <a href="${subjectClassRoomLink}" target="_blank" class="text-base underline text-blue-600 hover:text-blue-700">ลิ้งค์คลาสรูม</a>
@@ -116,15 +116,14 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
 function closeModel() {
   document.getElementById("model-detail-content").style.scale = "1";
   document.getElementById("model-detail-bg").style.opacity = "1";
+  document.getElementById("model-detail-content").classList.remove("ease-out");
+  document.getElementById("model-detail-content").classList.add("ease-in");
   setTimeout(() => {
     document.getElementById("model-detail-content").style.scale = "0";
     document.getElementById("model-detail-bg").style.opacity = "0";
     setTimeout(() => {
       document.getElementById("model-detail").classList.add("hidden");
-    }, 200);
+    }, 300);
   }, 100);
 }
-
-
-
-
+ 
