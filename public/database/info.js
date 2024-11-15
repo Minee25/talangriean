@@ -14,7 +14,7 @@ const time = [
 
 const subjectList = [
   {
-    title: "โอ๊ค, A, ไนซ์, วีโก้, ม่อน",
+    title: "โอ๊ค, A, ไนซ์, วีโก้",
     subject: [
       {
         day: "Mon",
@@ -454,6 +454,218 @@ const subjectList = [
       },
     ]
   },
-  { undefined },
-  { undefined }
+  {
+    title: "ม่อน",
+    subject: [
+      {
+        day: "Mon",
+        subject: [
+          {
+            subject: "Mathematics for Computer Science 2",
+            startTime: 2,
+            hours: 3,
+            code: "1204105",
+            section: 1,
+            location: "IT-412",
+            teacher: "อ.ดร.พรทิวา ปะวะระ",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "pornntiwa.png",
+                gmail: "pornntiwa.p@msu.ac.th",
+                tel: "043-719800 ต่อ 5001, 06-3635-5044",
+                classRoomLink: "#"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        day: "Tue",
+        subject: [
+          {
+            subject: "Principles of Computer Programming",
+            startTime: 1,
+            hours: 4,
+            code: "1204107",
+            section: 1,
+            location: "IT-402",
+            teacher: "ผศ.ดร.สำรวน เวียงสมุทร",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "ผศ.ดร.สำรวน-เวียงสมุทร.jpg",
+                gmail: "panida.s@msu.ac.th",
+                tel: "5365, 5003",
+                classRoomLink: "#"
+              }
+            ]
+          },
+          {
+            subject: "Food and Exercise for Health and Beauty",
+            startTime: 10,
+            hours: 2,
+            code: "0042005",
+            section: 2,
+            location: "SC1-100",
+            teacher: "ผศ.ดร.กภ. กู้เกียรติ ทุดปอ, อ.ปิยเชษฐ์ ตะสิงห์",
+            bg: "#fca311cc",
+            bgHover: "#d97706",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        day: "Wed",
+        subject: [
+          {
+            subject: "Probability and Applied Statistics for Computer Science",
+            startTime: 2,
+            hours: 3,
+            code: "1204106",
+            section: 2,
+            location: "IT-511",
+            teacher: "อ.ดร.นัฐธริยา เหล่าประชา",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "นัฐธริยา.jpeg",
+                gmail: "natthariya.l@msu.ac.th",
+                tel: "5365, 5003",
+                classRoomLink: "#"
+              }
+            ]
+          },
+          {
+            subject: "Cultural Tourism",
+            startTime: 6,
+            hours: 2,
+            code: "0045009",
+            section: 1,
+            location: "RN1-806",
+            teacher: "อ.ดร.เยาวภา นียากร",
+            bg: "#d6aef7",
+            bgHover: "#9b4cc4",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Religion and Reasoning for Living",
+            startTime: 3,
+            hours: 2,
+            code: "0044007",
+            section: 2,
+            location: "RN1-710",
+            teacher: "ผศ.ดร.ประภัสสร บุษหมั่น, ผศ.ดร.ธัชชัย จิตรนันท์",
+            bg: "#85b6ff",
+            bgHover: "#4c83d3",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+          {
+            subject: "Life Skills",
+            startTime: 6,
+            hours: 2,
+            code: "0042008",
+            section: 2,
+            location: "RN1-710",
+            teacher: "อ.บวรพจน์ ชมภูนุช, ผศ.ดร.สุดารัตน์ ถนนแก้ว",
+            bg: "#fca311cc",
+            bgHover: "#d97706",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+          {
+            subject: "Design Thinking",
+            startTime: 8,
+            hours: 2,
+            code: "0043001",
+            section: 8,
+            location: "RN1-604",
+            teacher: "รศ.ดร.ชัยสิทธิ์ สิทธิเวช",
+            bg: "#c2f784",
+            bgHover: "#4ADE80",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        day: "Fri",
+        subject: [
+          {
+            subject: "Communicative English",
+            startTime: 6,
+            hours: 2,
+            code: "0041002",
+            section: 28,
+            location: "RN1-507",
+            teacher: "อ.ก่อกิจบุญ ฟูคำ",
+            bg: "#f9a1d8cc",
+            bgHover: "#9b0f45",
+            detail: [
+              {
+                imgUrl: "",
+                department: "",
+                subjectsTaught: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "#"
+              }
+            ]
+          },
+        ]
+      },
+    ]
+  },
+  {},
 ];

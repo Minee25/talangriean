@@ -19,11 +19,12 @@ function tableResponsive() {
 // dropdown
 const dropdownMenu = subjectList.map(item => item.title);
 
-let dropdownSelected = 0; 
+let dropdownSelected = localStorage.getItem("dropdownSelecting") || 0;
+  
 document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected];
 
 const dropdownMenuEl = document.getElementById("dropdown-menu");
-let dropdownHTML = ''; 
+let dropdownHTML = '';
 
 dropdownMenu.forEach((item, index) => {
   dropdownHTML += `<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 duration-200" data-index="${index}">${item}</a>`;
@@ -35,6 +36,7 @@ dropdownMenuEl.addEventListener('click', (event) => {
   if (event.target.matches('a')) {
     dropdownSelected = parseInt(event.target.getAttribute('data-index'));
     document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected];
+    localStorage.setItem("dropdownSelecting", dropdownSelected);
   }
 });
 
@@ -45,14 +47,14 @@ dropdownMenuEl.addEventListener("click", (e) => {
     const index = parseInt(e.target.getAttribute('data-index'));
     document.getElementById("text-dropdown-btn").innerText = e.target.textContent;
     dropdownSelected = index;
-    updateTable(dropdownSelected); 
+    updateTable(dropdownSelected);
     dropdownMenuEl.classList.add("hidden");
   }
 });
 
 // open menu dropdown
 document.getElementById("dropdown-btn").addEventListener("click", (e) => {
-  e.stopPropagation(); 
+  e.stopPropagation();
   const dropdownMenu = document.getElementById("dropdown-menu");
 
   dropdownMenu.classList.toggle("hidden");
@@ -91,7 +93,7 @@ document.querySelectorAll(".close-modal").forEach(el => {
 });
 
 window.onload = () => {
-  send();
+  // send();
 }
 
 function send() {
