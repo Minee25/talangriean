@@ -20,7 +20,7 @@ function tableResponsive() {
 const dropdownMenu = subjectList.map(item => item.title);
 
 let dropdownSelected = localStorage.getItem("dropdownSelecting") || 0;
-  
+
 document.getElementById("text-dropdown-btn").innerText = dropdownMenu[dropdownSelected];
 
 const dropdownMenuEl = document.getElementById("dropdown-menu");
@@ -93,7 +93,7 @@ document.querySelectorAll(".close-modal").forEach(el => {
 });
 
 window.onload = () => {
-  // send();
+  send();
 }
 
 function send() {
