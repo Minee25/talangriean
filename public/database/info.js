@@ -34,7 +34,7 @@ const subjectList = [
                 imgUrl: "pornntiwa.png",
                 gmail: "pornntiwa.p@msu.ac.th",
                 tel: "043-719800 ต่อ 5001, 06-3635-5044",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzMDk2NDQx"
               }
             ]
           },
@@ -50,10 +50,10 @@ const subjectList = [
             bgHover: "#4c83d3",
             detail: [
               {
-                imgUrl: "",
-                gmail: "",
+                imgUrl: "ศักดิ์ชาย สุนทรธนาภิรมย์.jpg",
+                gmail: "Sakchai.s@msu.ac.th, Amorntep.m@msu.ac.th, Jatepiwint.a@msu.ac.th",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg0MTk2NTky"
               }
             ]
           },
@@ -77,7 +77,7 @@ const subjectList = [
                 imgUrl: "ผศ.ดร.สำรวน-เวียงสมุทร.jpg",
                 gmail: "panida.s@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg0MTk2NTky"
               }
             ]
           },
@@ -93,12 +93,10 @@ const subjectList = [
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "กู้เกียรติ ทุดปอ.jpg", 
+                gmail: "kukiat.t@msu.ac.th",
+                tel: "085-5029788",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxMjczNTY1"
               }
             ]
           },
@@ -122,7 +120,7 @@ const subjectList = [
                 imgUrl: "นัฐธริยา.jpeg",
                 gmail: "natthariya.l@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzNjY5NDg0"
               }
             ]
           },
@@ -138,12 +136,10 @@ const subjectList = [
             bgHover: "#9b4cc4",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "ชนิดาพร ตุ้มปี่สุวรร.jpeg", 
+                gmail: "ctumpeesuwan@yahoo.com",
+                tel: "043-754245",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg1MDY4NTUx"
               }
             ]
           },
@@ -159,12 +155,10 @@ const subjectList = [
             bgHover: "#4ADE80",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
+                imgUrl: "สันทนา ภิรมย์เกียรติ.png", 
+                gmail: "santana.p@msu.ac.th",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxNjYxMjc1"
               }
             ]
           },
@@ -180,17 +174,15 @@ const subjectList = [
             code: "0042008",
             section: 1,
             location: "RN1-710",
-            teacher: "อ.ดร.วันทกาญจน์ สีมาโรฤทธิ์การ์ด, ผศ.ดร.สุดารัตน์ ถนนแก้ว",
+            teacher: "อ.ดร.วันทกาญจน์ สีมาโรฤทธิ์ การ์ด, ผศ.ดร.สุดารัตน์ ถนนแก้ว",
             bg: "#fca311cc",
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "วันทกาญจน์ สีมาโรฤทธิ์ การ์ด.jpg", 
+                gmail: "wantakan.s@msu.ac.th",
+                tel: "043-719800 ext. *7302,*6174",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODc5MDIwMDUw"
               }
             ]
           },
@@ -206,12 +198,10 @@ const subjectList = [
             bgHover: "#9b0f45",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
+                imgUrl: "ธานิศา ศรีสังข์.jpg", 
                 gmail: "",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODc3MDM3NjM0"
               }
             ]
           },
@@ -244,7 +234,7 @@ const subjectList = [
                 imgUrl: "pornntiwa.png",
                 gmail: "pornntiwa.p@msu.ac.th",
                 tel: "043-719800 ต่อ 5001, 06-3635-5044",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzMDk2NDQx"
               }
             ]
           },
@@ -260,10 +250,10 @@ const subjectList = [
             bgHover: "#4c83d3",
             detail: [
               {
-                imgUrl: "",
-                gmail: "",
+                imgUrl: "ศักดิ์ชาย สุนทรธนาภิรมย์.jpg",
+                gmail: "Sakchai.s@msu.ac.th, Amorntep.m@msu.ac.th, Jatepiwint.a@msu.ac.th",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg0MTk2NTky"
               }
             ]
           },
@@ -287,7 +277,7 @@ const subjectList = [
                 imgUrl: "ผศ.ดร.สำรวน-เวียงสมุทร.jpg",
                 gmail: "panida.s@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg0MTk2NTky"
               }
             ]
           },
@@ -303,12 +293,10 @@ const subjectList = [
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "กู้เกียรติ ทุดปอ.jpg", 
+                gmail: "kukiat.t@msu.ac.th",
+                tel: "085-5029788",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxMjczNTY1"
               }
             ]
           },
@@ -332,7 +320,7 @@ const subjectList = [
                 imgUrl: "นัฐธริยา.jpeg",
                 gmail: "natthariya.l@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzNjY5NDg0"
               }
             ]
           },
@@ -348,12 +336,10 @@ const subjectList = [
             bgHover: "#9b4cc4",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "ชนิดาพร ตุ้มปี่สุวรร.jpeg", 
+                gmail: "ctumpeesuwan@yahoo.com",
+                tel: "043-754245",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg1MDY4NTUx"
               }
             ]
           },
@@ -369,12 +355,10 @@ const subjectList = [
             bgHover: "#4ADE80",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
+                imgUrl: "สันทนา ภิรมย์เกียรติ.png", 
+                gmail: "santana.p@msu.ac.th",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxNjYxMjc1"
               }
             ]
           },
@@ -390,17 +374,15 @@ const subjectList = [
             code: "0042008",
             section: 1,
             location: "RN1-710",
-            teacher: "อ.ดร.วันทกาญจน์ สีมาโรฤทธิ์การ์ด, ผศ.ดร.สุดารัตน์ ถนนแก้ว",
+            teacher: "อ.ดร.วันทกาญจน์ สีมาโรฤทธิ์ การ์ด, ผศ.ดร.สุดารัตน์ ถนนแก้ว",
             bg: "#fca311cc",
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "วันทกาญจน์ สีมาโรฤทธิ์ การ์ด.jpg", 
+                gmail: "wantakan.s@msu.ac.th",
+                tel: "043-719800 ext. *7302,*6174",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODc5MDIwMDUw"
               }
             ]
           },
@@ -416,11 +398,9 @@ const subjectList = [
             bgHover: "#9b0f45",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
+                imgUrl: "กิตติพงษ์ ประพันธ์.jpeg", 
+                gmail: "kittiphong.p@msu.ac.th",
+                tel: "043-754-321 ถึง 40 ต่อ 4825, 4826",
                 classRoomLink: "#"
               }
             ]
@@ -437,11 +417,9 @@ const subjectList = [
             bgHover: "#4c83d3",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
+                imgUrl: "อภิญวัฒน์ โพธิ์สาน.jpeg", 
+                gmail: "apinyawat.p@msu.ac.th",
+                tel: "043-754-321 ต่อ 4827",
                 classRoomLink: "#"
               }
             ]
@@ -475,7 +453,7 @@ const subjectList = [
                 imgUrl: "pornntiwa.png",
                 gmail: "pornntiwa.p@msu.ac.th",
                 tel: "043-719800 ต่อ 5001, 06-3635-5044",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzMDk2NDQx"
               }
             ]
           },
@@ -499,7 +477,7 @@ const subjectList = [
                 imgUrl: "ผศ.ดร.สำรวน-เวียงสมุทร.jpg",
                 gmail: "panida.s@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODg0MTk2NTky"
               }
             ]
           },
@@ -515,12 +493,10 @@ const subjectList = [
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
-                classRoomLink: "#"
+                imgUrl: "กู้เกียรติ ทุดปอ.jpg", 
+                gmail: "kukiat.t@msu.ac.th",
+                tel: "085-5029788",
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxMjczNTY1"
               }
             ]
           },
@@ -544,7 +520,7 @@ const subjectList = [
                 imgUrl: "นัฐธริยา.jpeg",
                 gmail: "natthariya.l@msu.ac.th",
                 tel: "5365, 5003",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI3MTgzNjY5NDg0"
               }
             ]
           },
@@ -560,11 +536,9 @@ const subjectList = [
             bgHover: "#9b4cc4",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
+                imgUrl: "เยาวภา นียากร.jpg", 
+                gmail: "yaowapha.n@msu.ac.th",
+                tel: "043-719800 ext. *7302,*6174",
                 classRoomLink: "#"
               }
             ]
@@ -586,11 +560,9 @@ const subjectList = [
             bgHover: "#4c83d3",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
+                imgUrl: "ประภัสสร บุษหมั่น.jpg", 
+                gmail: "prapassorn.c@msu.ac.th",
+                tel: "043754333 ต่อ 1835  มือถือ 08-1592-5295",
                 classRoomLink: "#"
               }
             ]
@@ -607,11 +579,9 @@ const subjectList = [
             bgHover: "#d97706",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
-                tel: "",
+                imgUrl: "บวรพจน์ ชมภูนุช.jpg", 
+                gmail: "bovornpot.c@msu.ac.th ",
+                tel: "043-721764",
                 classRoomLink: "#"
               }
             ]
@@ -628,12 +598,10 @@ const subjectList = [
             bgHover: "#4ADE80",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
+                imgUrl: "สันทนา ภิรมย์เกียรติ.png", 
+                gmail: "santana.p@msu.ac.th",
                 tel: "",
-                classRoomLink: "#"
+                classRoomLink: "https://classroom.google.com/c/NzI4ODgxNjYxMjc1"
               }
             ]
           },
@@ -654,10 +622,8 @@ const subjectList = [
             bgHover: "#9b0f45",
             detail: [
               {
-                imgUrl: "",
-                department: "",
-                subjectsTaught: "",
-                gmail: "",
+                imgUrl: "ก่อกิจบุญ ฟูคำ.jpeg", 
+                gmail: "kokitboon.s@msu.ac.th",
                 tel: "",
                 classRoomLink: "#"
               }

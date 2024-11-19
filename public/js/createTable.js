@@ -68,8 +68,6 @@ function updateTable(index) {
 // Initialize the table with the default selection
 updateTable(dropdownSelected);
 
-
-
 // create model
 function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepartment, subjectSubjectsTaught, subjectTel, subjectGmail, subjectClassRoomLink) {
   document.getElementById("model-detail").classList.remove("hidden");
@@ -85,7 +83,7 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
 
     <div class="flex flex-col items-center min-h-full justify-center text-center">
       <h1 class="text-2xl font-bold mb-4 text-center">รายละเอียดวิชา</h1> 
-      <div>
+      <div> 
         <img src="./assets/img/teachers/${subjectImgUrl}" alt="Teacher Image" class="w-48 h-48 object-cover border-4 border-gray-300 rounded-full mb-4 shadow-md" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
       </div>
       <p class="text-base text-gray-600">${subjectTeacher.replace(/, /g, '<br>')}</p>
@@ -110,7 +108,14 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
   }, 100);
 }
 
-
+document.addEventListener("keydown", (event) => {
+  if (!document.getElementById("model-detail").classList.contains("hidden") && !document.getElementById("model-detail-bg").classList.contains("hidden")) {
+    if (event.key === "Escape" || event.keyCode === 27) {
+      closeModel();
+      console.log("dfdf");
+    }
+  }
+});
 
 // close the model
 function closeModel() {
@@ -122,8 +127,7 @@ function closeModel() {
     document.getElementById("model-detail-content").style.scale = "0";
     document.getElementById("model-detail-bg").style.opacity = "0";
     setTimeout(() => {
-      document.getElementById("model-detail").classList.add("hidden");
+      document.getElementById("model-detail").classList.add("hidden"); 
     }, 300);
   }, 100);
 }
- 
