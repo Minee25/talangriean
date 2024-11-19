@@ -992,6 +992,10 @@ video {
   border-color: rgb(0 0 0 / 0.1);
 }
 
+.border-black\/5 {
+  border-color: rgb(0 0 0 / 0.05);
+}
+
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1004,14 +1008,6 @@ video {
 
 .border-white\/80 {
   border-color: rgb(255 255 255 / 0.8);
-}
-
-.border-black\/30 {
-  border-color: rgb(0 0 0 / 0.3);
-}
-
-.border-black\/5 {
-  border-color: rgb(0 0 0 / 0.05);
 }
 
 .bg-\[\#0000004d\] {
