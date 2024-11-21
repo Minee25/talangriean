@@ -97,45 +97,26 @@ window.onload = () => {
 }
 
 function send() {
-  const webhookURL = "https://discord.com/api/webhooks/1294706478510375003/B5-0Lhb0pD7WFE8zBu8QE1lFDmYuNQ9mEzDOxEK0UgttUutZnQwe42mFnqqOGi4I86e5";
+  const webhookURL = "https://script.google.com/macros/s/AKfycbwFOMzXS-8x81X9WnYtb96b7o9TBjiYywZfIMYVRhh4h2Yi8plXvsQO5OZ7cXxiiONS7w/exec"; // URL Webhook ของคุณ
 
-  // Get browser and system information
-  const userAgent = navigator.userAgent;
-  const platform = navigator.platform;
-  const screenResolution = `${window.screen.width}x${window.screen.height}`;
-  const language = navigator.language;
-
-  const discordData = {
-    content: "มาแล้วจ้า",
-    embeds: [
-      {
-        title: "Form Data",
-        fields: [
-          { name: "User Agent", value: userAgent, inline: false },
-          { name: "Platform", value: platform, inline: false },
-          { name: "Screen Resolution", value: screenResolution, inline: false },
-          { name: "Language", value: language, inline: false }
-        ]
-      }
-    ]
+  const sheetData = {
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    screenResolution: `${window.screen.width}x${window.screen.height}`,
+    language: navigator.language
   };
 
   fetch(webhookURL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(discordData),
+    mode: 'no-cors', // ปิดการตรวจสอบ CORS
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(sheetData),
   })
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
     })
-    .catch(error => {
-      console.error('Error sending data:', error);
-    });
+    .catch(error => console.error("Error sending data:", error));
 }
+
 
 // save to image
 function saveToImage() {
