@@ -25,7 +25,7 @@ function updateTable(index) {
                 <div class="absolute w-full h-full top-0">
                   <div style="width: ${subject.hours * 100}%" class="relative h-full z-10 p-2 text-[11px] leading-[14px] font-normal">
                     <div 
-                      onclick="createModel('${subject.detail && subject.detail[0] ? subject.detail[0].imgUrl : ""}', '${subject.subject}', '${subject.teacher}', '${subject.detail && subject.detail[0] ? subject.detail[0].department : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].subjectsTaught : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].tel : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].gmail : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].classRoomLink : ""}')"
+                      onclick="createModel('${subject.detail && subject.detail[0] ? subject.detail[0].imgUrl : ""}', '${subject.subject}', '${subject.code}', '${subject.section}', '${subject.teacher}', '${subject.detail && subject.detail[0] ? subject.detail[0].department : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].subjectsTaught : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].tel : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].gmail : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].classRoomLink : ""}')"
                       style="background: ${subject.bg};"
                       onmouseover="this.style.backgroundColor = '${subject.bgHover}'; this.style.color = '#FFFFFFF2';"
                       onmouseout="this.style.backgroundColor = '${subject.bg}'; this.style.color = '#000000';"
@@ -69,7 +69,7 @@ function updateTable(index) {
 updateTable(dropdownSelected);
 
 // create model
-function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepartment, subjectSubjectsTaught, subjectTel, subjectGmail, subjectClassRoomLink) {
+function createModel(subjectImgUrl, subjectSubject, subjectCode, subjectSection, subjectTeacher, subjectDepartment, subjectSubjectsTaught, subjectTel, subjectGmail, subjectClassRoomLink) {
   document.getElementById("model-detail").classList.remove("hidden");
 
   document.getElementById("model-detail").innerHTML = `
@@ -89,8 +89,9 @@ function createModel(subjectImgUrl, subjectSubject, subjectTeacher, subjectDepar
       <p class="text-base text-gray-600">${subjectTeacher.replace(/, /g, '<br>')}</p>
       <hr class="my-4 border-t border-gray-600 w-full">
       <h2 class="text-lg font-semibold mb-1 text-gray-800">${subjectSubject}</h2>  
+      <p class="text-base text-gray-600 mb-2">Code: <span class="font-medium">${subjectCode} sec ${subjectSection}</span></p>   
       <p class="text-base text-gray-600 mb-2">Gmail: <span class="font-medium">${subjectGmail}</span></p>   
-      <p class="text-base text-gray-600 mb-2">โทรศัพท์: <span class="font-medium">${subjectTel}</span></p>  
+      <p class="text-base text-gray-600 mb-2">Phone: <span class="font-medium">${subjectTel}</span></p>  
       <a href="${subjectClassRoomLink}" target="_blank" class="text-base underline text-blue-600 hover:text-blue-700">ลิ้งค์คลาสรูม</a>
     </div>
   </div>
@@ -127,7 +128,7 @@ function closeModel() {
     document.getElementById("model-detail-content").style.scale = "0";
     document.getElementById("model-detail-bg").style.opacity = "0";
     setTimeout(() => {
-      document.getElementById("model-detail").classList.add("hidden"); 
+      document.getElementById("model-detail").classList.add("hidden");
     }, 300);
   }, 100);
 }
