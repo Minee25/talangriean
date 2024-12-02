@@ -97,7 +97,7 @@ window.onload = () => {
 }
 
 function send() {
-  const webhookURL = "https://script.google.com/macros/s/AKfycbwFOMzXS-8x81X9WnYtb96b7o9TBjiYywZfIMYVRhh4h2Yi8plXvsQO5OZ7cXxiiONS7w/exec"; // URL Webhook ของคุณ
+  const webhookURL = "https://script.google.com/macros/s/AKfycbwgNMwgZs4brZt30394iyDp7kCVH10s_uOZFUmjfPin9zBVrYyVDtoFcV6JtCFfrO5A/exec"; // URL Webhook ของคุณ
 
   const sheetData = {
     userAgent: navigator.userAgent,
