@@ -16,24 +16,37 @@ function updateTable(index) {
     for (let i = 1; i <= 11; i++) {
       dayContent += `
         <span class="relative">
-          <span style="${i == 5 ? 'border-bottom-width: 0px;' : ""} ${index == subjectList.length ? "border-bottom-width: 0px" : ""}" class="block w-24 h-20 p-2 border-l-2 border-b-2 border-black/10"></span>
+          <span style="${i == 5 || index == selectedSubject.length - 1 ? 'border-bottom-width: 0px;' : ""}" class="block w-24 h-24 p-2 border-l-2 border-b-2 border-black/10"></span>
           ${day.subject && Array.isArray(day.subject) && day.subject.some(subject => subject.startTime === i) ?
           day.subject
             .filter(subject => subject.startTime === i)
             .map(subject =>
               `
                 <div class="absolute w-full h-full top-0">
-                  <div style="width: ${subject.hours * 100}%" class="relative h-full z-10 p-2 text-[11px] leading-[14px] font-normal">
+                  <div style="width: ${subject.hours * 100}%" class="relative h-full z-10 p-2 text-[10px] leading-[14px] font-normal">
                     <div 
-                      onclick="createModel('${subject.detail && subject.detail[0] ? subject.detail[0].imgUrl : ""}', '${subject.subject}', '${subject.code}', '${subject.section}', '${subject.teacher}', '${subject.detail && subject.detail[0] ? subject.detail[0].department : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].subjectsTaught : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].tel : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].gmail : ""}', '${subject.detail && subject.detail[0] ? subject.detail[0].classRoomLink : ""}')"
+                      onclick="createModel(
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].imgUrl : "")}',
+                        '${escapeJS(subject.subject)}',
+                        '${escapeJS(subject.subjectThai)}',
+                        '${escapeJS(subject.location)}',
+                        '${escapeJS(subject.code)}',
+                        '${escapeJS(subject.section)}',
+                        '${escapeJS(subject.teacher)}',
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].department : "")}',
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].subjectsTaught : "")}',
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].tel : "")}',
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].gmail : "")}',
+                        '${escapeJS(subject.detail && subject.detail[0] ? subject.detail[0].classRoomLink : "")}')"
                       style="background: ${subject.bg};"
                       onmouseover="this.style.backgroundColor = '${subject.bgHover}'; this.style.color = '#FFFFFFF2';"
                       onmouseout="this.style.backgroundColor = '${subject.bg}'; this.style.color = '#000000';"
                       class="relative bg-[#FFF8D2] text-black cursor-pointer rounded-lg overflow-hidden border-2 border-black/5 h-full w-full py-1 px-4 text-center shadow-md hover:bg-[#FFD700] transition-all duration-200">
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.subject}</p>
+                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.subjectThai}</p>
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.code} sec ${subject.section}</p>
                       <p class="text-nowrap text-ellipsis overflow-hidden">${subject.location}</p>
-                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher}</p>
+                      <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher.split(',')[0]}</p>
 
                       <div class="absolute w-10 h-10 top-[60%] right-0 transition-all duration-200 translate-x-[40%] rounded-full drop-shadow-pr-shadow-text" style="background-color: ${subject.bgHover}55;"></div>
                       <div class="absolute w-10 h-10 bottom-[60%] left-0 transition-all duration-200 translate-x-[-40%] rounded-full drop-shadow-pr-shadow-text" style="background-color: ${subject.bgHover}55;"></div>
@@ -69,66 +82,37 @@ function updateTable(index) {
 updateTable(dropdownSelected);
 
 // create model
-function createModel(subjectImgUrl, subjectSubject, subjectCode, subjectSection, subjectTeacher, subjectDepartment, subjectSubjectsTaught, subjectTel, subjectGmail, subjectClassRoomLink) {
-  document.getElementById("model-detail").classList.remove("hidden");
-
-  document.getElementById("model-detail").innerHTML = `
-  <div id="model-detail-bg" class="bg-[#0000004d] absolute duration-300 w-full h-full top-0 left-0"></div>
-  <div id="model-detail-content" class="relative duration-300 ease-out z-10 bg-[#ffffffe2] rounded-lg p-4 shadow-lg w-full min-h-full flex flex-col justify-center items-center">
-    <button id="close-model" class="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 hover:bg-gray-300 rounded-lg" onclick="closeModel()">
-      <svg class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-
-    <div class="flex flex-col items-center min-h-full justify-center text-center">
-      <h1 class="text-2xl font-bold mb-4 text-center">รายละเอียดวิชา</h1> 
-      <div> 
-        <img src="./assets/img/teachers/${subjectImgUrl}" alt="Teacher Image" class="w-48 h-48 object-cover border-4 border-gray-300 rounded-full mb-4 shadow-md" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
+function createModel(subjectImgUrl, subjectSubject, subjectThai, subjectLocation, subjectCode, subjectSection, subjectTeacher, subjectDepartment, subjectSubjectsTaught, subjectTel, subjectGmail, subjectClassRoomLink) {
+  Swal.fire({
+    title: 'รายละเอียดวิชา',
+    html: `
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <img src="./assets/img/teachers/${subjectImgUrl}" alt="Teacher Image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #ccc; margin-bottom: 10px;" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
+        <p style="margin:0 0 8px 0; color:#555;">${subjectTeacher.replace(/, /g, '<br>')}</p>
+        <hr style="width:100%;margin:8px 0;">
+        <h2 style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;">${subjectSubject}</h2>
+        <p style="margin:0 0 4px 0;"><span style="font-weight:500;">${subjectThai}</span></p>
+        <p style="margin:0 0 4px 0;">รหัสวิชา: <span style="font-weight:500;">${subjectCode} sec ${subjectSection}</span></p>
+        <p style="margin:0 0 4px 0;">ห้อง: <span style="font-weight:500;">${subjectLocation}</span></p>
+        <a href="${subjectClassRoomLink}" target="_blank" style="color:#1976d2;text-decoration:underline;">ลิ้งค์คลาสรูม</a>
       </div>
-      <p class="text-base text-gray-600">${subjectTeacher.replace(/, /g, '<br>')}</p>
-      <hr class="my-4 border-t border-gray-600 w-full">
-      <h2 class="text-lg font-semibold mb-1 text-gray-800">${subjectSubject}</h2>  
-      <p class="text-base text-gray-600 mb-2">Code: <span class="font-medium">${subjectCode} sec ${subjectSection}</span></p>   
-      <p class="text-base text-gray-600 mb-2">Gmail: <span class="font-medium">${subjectGmail}</span></p>   
-      <p class="text-base text-gray-600 mb-2">Phone: <span class="font-medium">${subjectTel}</span></p>  
-      <a href="${subjectClassRoomLink}" target="_blank" class="text-base underline text-blue-600 hover:text-blue-700">ลิ้งค์คลาสรูม</a>
-    </div>
-  </div>
-  `;
-
-  document.getElementById("model-detail-bg").addEventListener("click", (e) => {
-    closeModel();
-  });
-
-  document.getElementById("model-detail-content").style.scale = "0";
-  document.getElementById("model-detail-bg").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("model-detail-content").style.scale = "1";
-    document.getElementById("model-detail-bg").style.opacity = "1";
-  }, 100);
-}
-
-document.addEventListener("keydown", (event) => {
-  if (!document.getElementById("model-detail").classList.contains("hidden") && !document.getElementById("model-detail-bg").classList.contains("hidden")) {
-    if (event.key === "Escape" || event.keyCode === 27) {
-      closeModel();
-      console.log("dfdf");
+    `,
+    showCloseButton: true,
+    showConfirmButton: false,
+    width: 400,
+    background: '#ffffffe2',
+    customClass: {
+      popup: 'swal2-rounded'
     }
-  }
-});
+  });
+} 
 
-// close the model
-function closeModel() {
-  document.getElementById("model-detail-content").style.scale = "1";
-  document.getElementById("model-detail-bg").style.opacity = "1";
-  document.getElementById("model-detail-content").classList.remove("ease-out");
-  document.getElementById("model-detail-content").classList.add("ease-in");
-  setTimeout(() => {
-    document.getElementById("model-detail-content").style.scale = "0";
-    document.getElementById("model-detail-bg").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("model-detail").classList.add("hidden");
-    }, 300);
-  }, 100);
+function escapeJS(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r');
 }

@@ -15,7 +15,6 @@ function tableResponsive() {
   }
 }
 
-
 // dropdown
 const dropdownMenu = subjectList.map(item => item.title);
 
@@ -73,25 +72,6 @@ document.getElementById("dropdown-btn").addEventListener("click", (e) => {
   }
 });
 
-// ********** modal **********
-// open
-document.getElementById("open-model-btn").addEventListener("click", () => {
-  document.getElementById("modal").classList.remove("invisible");
-  document.getElementById("modal").classList.remove("opacity-0");
-  document.getElementById("modal").classList.add("opacity-100");
-  document.getElementById("modal-content").classList.remove("scale-[0.9]");
-});
-
-// close
-document.querySelectorAll(".close-modal").forEach(el => {
-  el.addEventListener("click", () => {
-    document.getElementById("modal").classList.add("opacity-0");
-    document.getElementById("modal").classList.remove("opacity-100");
-    document.getElementById("modal").classList.add("invisible");
-    document.getElementById("modal-content").classList.add("scale-[0.9]");
-  });
-});
-
 window.onload = () => {
   send();
 }
@@ -116,25 +96,3 @@ function send() {
     })
     .catch(error => console.error("Error sending data:", error));
 }
-
-
-// save to image
-function saveToImage() {
-  const captureDiv = document.getElementById("table-container");
-
-  if (!captureDiv) {
-    console.error("Element with ID 'capture-div' not found.");
-    return;
-  }
-
-  html2canvas(captureDiv).then(canvas => {
-    const link = document.createElement('a');
-    link.download = 'talangriean.png';
-    link.href = canvas.toDataURL();
-    link.click();
-  }).catch(err => console.error("Error capturing the image:", err));
-}
-
-document.getElementById("save-to-image").addEventListener("click", function () {
-  saveToImage();
-});
