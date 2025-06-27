@@ -230,7 +230,7 @@ const subjectList = [
         subject: [
           {
             subject: "The King's Philosophy and Sustainable Development",
-            subjectThai: "ปรัชญาของกษัตริย์กับการพัฒนาอย่างยั่งยืน",
+            subjectThai: "ศาสตร์พระราชากับการพัฒนาที่ยั่งยืน",
             startTime: 3,
             hours: 2,
             code: "0044006",
