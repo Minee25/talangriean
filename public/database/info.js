@@ -150,7 +150,7 @@ const subjectList = [
                 imgUrl: "",
                 gmail: "",
                 tel: "",
-                classRoomLink: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NDUwMjAx",
                 time: "17:00:00 - 19:00:00"
               }
             ]
@@ -171,7 +171,7 @@ const subjectList = [
                 imgUrl: "",
                 gmail: "",
                 tel: "",
-                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzcxNDQz/m/Nzg3NzY3NDcyNjky/details",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzU4NjM2",
                 time: "17:00:00 - 19:00:00"
               }
             ]
@@ -230,7 +230,7 @@ const subjectList = [
         subject: [
           {
             subject: "The King's Philosophy and Sustainable Development",
-            subjectThai: "ปรัชญาของกษัตริย์กับการพัฒนาอย่างยั่งยืน",
+            subjectThai: "ศาสตร์พระราชากับการพัฒนาที่ยั่งยืน",
             startTime: 3,
             hours: 2,
             code: "0044006",
