@@ -14,7 +14,7 @@ const time = [
 
 const subjectList = [
   {
-    title: "main",
+    title: "OaK",
     subject: [
       {
         day: "Mon",
@@ -286,6 +286,246 @@ const subjectList = [
                 gmail: "",
                 tel: "",
                 classRoomLink: "https://classroom.google.com/c/NzgyMDUwNjYzODM4",
+                time: "17:00:00 - 19:00:00"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Mon",
+    subject: [
+      {
+        day: "Mon",
+        subject: [
+          {
+            subject: "Data Communication Systems and Computer Network",
+            subjectThai: "ระบบสื่อสารข้อมูลและเครือข่ายคอมพิวเตอร์",
+            startTime: 6,
+            hours: 4,
+            code: "1204108",
+            section: 2,
+            location: "IT-401",
+            teacher: "อ.ดร.อรรถพล สุวรรณษา",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzU2ODc4",
+                time: "13:00:00 - 17:00:00"
+              }
+            ]
+          },
+          {
+            subject: "Health Care for Different Age Groups",
+            subjectThai: " การดูแลสุขภาพแต่ละช่วงวัย",
+            startTime: 10,
+            hours: 2,
+            code: "0042004",
+            section: 4,
+            location: "PH2-204",
+            teacher: "ผศ.วัลลภา ลีลานันทกุล, อ.ดร.จงกลณี ธนาไสย์",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgyMDQ5OTA3OTEz",
+                time: "17:00:00 - 19:00:00"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        day: "Tue",
+        subject: [
+          {
+            subject: "Object Oriented Programming",
+            subjectThai: "การเขียนโปรแกรมเชิงวัตถุ",
+            startTime: 6,
+            hours: 2,
+            code: "1204203",
+            section: 2,
+            location: "IT-412",
+            teacher: "อ.พชระ พฤกษะศรี",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzE5NTMx",
+                time: "13:00:00 - 15:00:00"
+              }
+            ]
+          },
+          {
+            subject: "Database Design and Management",
+            subjectThai: "การออกแบบและการจัดการฐานข้อมูล",
+            startTime: 8,
+            hours: 2,
+            code: "1204202",
+            section: 2,
+            location: "IT-512",
+            teacher: "อ.ดร.พรทิวา ปะวะระ",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2Nzk1NzY2",
+                time: "15:00:00 - 17:00:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        day: "Wed",
+        subject: [
+          {
+            subject: "Database Design and Management",
+            subjectThai: "การออกแบบและการจัดการฐานข้อมูล",
+            startTime: 1,
+            hours: 2,
+            code: "1204202",
+            section: 2,
+            location: "IT-407",
+            teacher: "อ.ดร.พรทิวา ปะวะระ",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2Nzk1NzY2",
+                time: "08:00:00 - 10:00:00"
+              }
+            ]
+          },
+          {
+            subject: "Object Oriented Programming",
+            subjectThai: "การเขียนโปรแกรมเชิงวัตถุ",
+            startTime: 3,
+            hours: 2,
+            code: "1204203",
+            section: 2,
+            location: "IT-403",
+            teacher: "อ.พชระ พฤกษะศรี",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzE5NTMx",
+                time: "10:00:00 - 12:00:00"
+              }
+            ]
+          },
+          {
+            subject: "Communicative English for Computer Science",
+            subjectThai: "ภาษาอังกฤษเพื่อการสื่อสารสำหรับวิทยาการคอมพิวเตอร์",
+            startTime: 10,
+            hours: 2,
+            code: "1204206",
+            section: 1,
+            location: "IT-412",
+            teacher: "ผศ.ดร.สมนึก พ่วงพรพิทักษ์",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2NzcxNDQz/m/Nzg3NzY3NDcyNjky/details",
+                time: "17:00:00 - 19:00:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        day: "Thu",
+        subject: [
+          {
+            subject: "Operating Systems",
+            subjectThai: "ระบบปฏิบัติการ",
+            startTime: 2,
+            hours: 3,
+            code: "1204205",
+            section: 1,
+            location: "IT-412",
+            teacher: "รศ.ดร.สุชาติ คุ้มมะณี",
+            bg: "#D5E6FF",
+            bgHover: "#000080",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgxODU2ODEwNzgz",
+                time: "09:00:00 - 12:00:00"
+              }
+            ]
+          },
+          {
+            subject: "Online Business",
+            subjectThai: "ธุรกิจออนไลน์",
+            startTime: 6,
+            hours: 2,
+            code: "0043006",
+            section: 4,
+            location: "RN1-710",
+            teacher: "ผศ.ดร.ภูริศร์ พงษ์เพียจันทร์",
+            bg: "#FED7AA",
+            bgHover: "#C2410C",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgyMDUwMDIxOTQ3",
+                time: "13:00:00 - 15:00:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        day: "Fri",
+        subject: [
+          {
+            subject: "Environmental Volunteers",
+            subjectThai: "จิตอาสาสิ่งแวดล้อม",
+            startTime: 10,
+            hours: 2,
+            code: "0044010",
+            section: 6,
+            location: "SC2-103",
+            teacher: "ผศ.ดร.ปานใจ สื่อประเสริฐสิทธิ์, ผศ.กนกวรรณ ศุกรนันทน์, ผศ.ธรพร บุศย์น้ำเพชร, ผศ.ดร.จตุพร เหลืองอุบล",
+            bg: "#E9D5FF",
+            bgHover: "#7E22CE",
+            detail: [
+              {
+                imgUrl: "",
+                gmail: "",
+                tel: "",
+                classRoomLink: "https://classroom.google.com/c/NzgyMDUwMzA0MzM4",
                 time: "17:00:00 - 19:00:00"
               }
             ]
