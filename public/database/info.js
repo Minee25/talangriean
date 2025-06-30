@@ -330,8 +330,8 @@ const subjectList = [
             section: 4,
             location: "PH2-204",
             teacher: "ผศ.วัลลภา ลีลานันทกุล, อ.ดร.จงกลณี ธนาไสย์",
-            bg: "#D5E6FF",
-            bgHover: "#000080",
+            bg: "#FED7AA",
+            bgHover: "#C2410C",
             detail: [
               {
                 imgUrl: "",
@@ -492,8 +492,8 @@ const subjectList = [
             section: 4,
             location: "RN1-710",
             teacher: "ผศ.ดร.ภูริศร์ พงษ์เพียจันทร์",
-            bg: "#FED7AA",
-            bgHover: "#C2410C",
+            bg: "#BBF7D0",
+            bgHover: "#15803D",
             detail: [
               {
                 imgUrl: "",
@@ -518,8 +518,8 @@ const subjectList = [
             section: 6,
             location: "SC2-103",
             teacher: "ผศ.ดร.ปานใจ สื่อประเสริฐสิทธิ์, ผศ.กนกวรรณ ศุกรนันทน์, ผศ.ธรพร บุศย์น้ำเพชร, ผศ.ดร.จตุพร เหลืองอุบล",
-            bg: "#E9D5FF",
-            bgHover: "#7E22CE",
+            bg: "#BFDBFE",
+            bgHover: "#1D4ED8",
             detail: [
               {
                 imgUrl: "",
