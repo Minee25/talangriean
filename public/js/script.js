@@ -77,7 +77,7 @@ window.onload = () => {
 }
 
 function send() {
-  const webhookURL = "https://script.google.com/macros/s/AKfycbwgNMwgZs4brZt30394iyDp7kCVH10s_uOZFUmjfPin9zBVrYyVDtoFcV6JtCFfrO5A/exec"; // URL Webhook ของคุณ
+  const webhookURL = "https://script.google.com/macros/s/AKfycbwgNMwgZs4brZt30394iyDp7kCVH10s_uOZFUmjfPin9zBVrYyVDtoFcV6JtCFfrO5A/exec";
 
   const sheetData = {
     userAgent: navigator.userAgent,
@@ -88,7 +88,7 @@ function send() {
 
   fetch(webhookURL, {
     method: 'POST',
-    mode: 'no-cors', // ปิดการตรวจสอบ CORS
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(sheetData),
   })
