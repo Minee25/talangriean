@@ -36,12 +36,15 @@ function parseTimeRange(timeRange) {
 
 // คำนวณเวลาให้ทุก class
 function autoCalc(subjectList) {
-  subjectList.forEach(item => {
+  subjectList.forEach((item, index) => {
     item.schedule.forEach(day => {
       day.classes.forEach(cls => {
         const parsed = parseTimeRange(cls.time);
         cls.startTime = parsed.startTime;
         cls.hours = parsed.hours;
+
+        // ใส่ id เข้าไปใน class
+        cls.subjectIndex = index;
       });
     });
   });
@@ -78,16 +81,7 @@ function updateTable(index) {
                 class="relative h-full z-10 p-2 text-[10px] leading-[14px] font-normal">
 
                 <div 
-                  onclick="createModel({
-                    img: '${escapeJS(subject.imgUrl)}',
-                    name: '${escapeJS(subject.name)}',
-                    thai: '${escapeJS(subject.nameThai)}',
-                    room: '${escapeJS(subject.room)}',
-                    code: '${escapeJS(subject.code)}',
-                    section: '${escapeJS(subject.section)}',
-                    teacher: '${escapeJS(subject.teacher)}',
-                    classRoomLink: '${escapeJS(subject.classRoomLink)}'
-                  })"
+                  onclick="createModel(${subject.subjectIndex}, '${escapeJS(day.day)}', '${escapeJS(subject.time)}')"
                   style="background: ${subject.bg};"
                   onmouseover="this.style.backgroundColor = '${subject.bgHover}'; this.style.color = '#FFFFFFF2';"
                   onmouseout="this.style.backgroundColor = '${subject.bg}'; this.style.color = '#000000';"
@@ -97,7 +91,7 @@ function updateTable(index) {
                   <p class="text-nowrap text-ellipsis overflow-hidden">${subject.nameThai}</p>
                   <p class="text-nowrap text-ellipsis overflow-hidden">${subject.code} sec ${subject.section}</p>
                   <p class="text-nowrap text-ellipsis overflow-hidden">${subject.room}</p>
-                  <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher.split(',')[0]}</p>
+                  <p class="text-nowrap text-ellipsis overflow-hidden">${subject.teacher ? subject.teacher.split(',')[0] : ''}</p>
 
                   <div class="absolute w-10 h-10 top-[60%] right-0 rounded-full drop-shadow-pr-shadow-text"
                     style="background-color: ${subject.bgHover}55;"></div>
@@ -138,19 +132,95 @@ function updateTable(index) {
 updateTable(dropdownSelected);
 
 // Model popup
-function createModel(subject) {
+function createModel(id, dayName, timeRange) { 
+  const subjectObj = subjectList[id];
+  
+  if (!subjectObj) {
+    console.error("ไม่พบวิชาที่ระบุด้วย index:", id);
+    return;
+  }
+
+  // ค้นหาคลาสเฉพาะที่ถูกคลิกตามวันและเวลา
+  let classData = null;
+  if (dayName && timeRange) {
+    const daySchedule = subjectObj.schedule.find(d => d.day === dayName);
+    if (daySchedule && daySchedule.classes) {
+      classData = daySchedule.classes.find(c => c.time === timeRange);
+    }
+  }
+
+  // ย้อนกลับไปยังคลาสแรกหากไม่พบคลาสที่เฉพาะเจาะจง
+  if (!classData) {
+    for (const day of subjectObj.schedule || []) {
+      if (day.classes && day.classes.length > 0) {
+        classData = day.classes[0];
+        break;
+      }
+    }
+  }
+
+  if (!classData) {
+    console.error("ไม่พบข้อมูลคลาสในวิชา");
+    return;
+  }
+
+  // รับค่าทั้งหมดด้วย fallback
+  const teacher = classData.teacher || '';
+  const teacherDisplay = teacher ? teacher.replace(/, /g, '<br>') : 'ไม่ระบุ';
+  const img = classData.img || 'omgcat-meme.gif';
+  const name = classData.name || 'ไม่ระบุ';
+  const nameThai = classData.nameThai || classData.thai || 'ไม่ระบุ';
+  const code = classData.code || 'ไม่ระบุ';
+  const section = classData.section || '';
+  const room = classData.room || 'ไม่ระบุ';
+  const classRoomLink = classData.classRoomLink || '#';
+  const links = classData.links || [];
+
   Swal.fire({
     title: 'รายละเอียดวิชา',
     html: `
       <div style="display:flex;flex-direction:column;align-items:center;">
-        <img src="./assets/img/teachers/${subject.img}" alt="Teacher Image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #ccc; margin-bottom: 10px;" onerror="this.onerror=null; this.src='./assets/img/omgcat-meme.gif';">
-        <p style="margin:0 0 8px 0; color:#555;">${subject.teacher.replace(/, /g, '<br>')}</p>
+        ${img ? `<img src="./assets/img/${img}" alt="Teacher Image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #ccc; margin-bottom: 10px;" onerror="this.onerror=null;">` : ''}
+        <p style="margin:0 0 8px 0; color:#555;">${teacherDisplay}</p>
         <hr style="width:100%;margin:8px 0;">
-        <h2 style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;">${subject.name}</h2>
-        <p style="margin:0 0 4px 0;"><span style="font-weight:500;">${subject.thai}</span></p>
-        <p style="margin:0 0 4px 0;">รหัสวิชา: <span style="font-weight:500;">${subject.code} sec ${subject.section}</span></p>
-        <p style="margin:0 0 4px 0;">ห้อง: <span style="font-weight:500;">${subject.room}</span></p>
-        <a href="${subject.classRoomLink}" target="_blank" style="color:#1976d2;text-decoration:underline;">ลิ้งค์คลาสรูม</a>
+        <h2 style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;">${name}</h2>
+        <p style="margin:0 0 4px 0;"><span style="font-weight:500;">${nameThai}</span></p>
+        <p style="margin:0 0 4px 0;">รหัสวิชา: <span style="font-weight:500;">${code}${section ? ` sec ${section}` : ''}</span></p>
+        <p style="margin:0 0 4px 0;">ห้อง: <span style="font-weight:500;">${room}</span></p>
+        ${classRoomLink !== '#' ? `<a href="${classRoomLink}" target="_blank" style="color:#1976d2;"><i class="fa-solid fa-link"></i> <span style="text-decoration:underline;">ลิ้งค์คลาสรูม</span></a>` : ''}
+        ${links && links.length > 0
+          ? `
+            <div style="margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+              ${links
+                .map(
+                  (l) => `
+                    <a href="${l}" target="_blank" style="color:#1976d2;text-decoration:underline;">
+                      ${(() => {
+                        // ตรวจสอบแพลตฟอร์มจากลิงก์เพื่อแสดงชื่อ
+                        const url = l.toLowerCase();
+
+                        if (url.includes("facebook.com/groups")) {
+                          return `<span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-brands fa-facebook"></i> <span style="text-decoration:underline;">Facebook Group</span></span>`;
+                        }
+                        if (url.includes("facebook.com")) {
+                          return `<span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-brands fa-facebook"></i> <span style="text-decoration:underline;">Facebook</span></span>`;
+                        }
+                        if (url.includes("line.me") || url.includes("line.app")) {
+                          return `<span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-brands fa-line"></i> <span style="text-decoration:underline;">LINE</span></span>`;
+                        }
+                        if (url.includes("youtube.com") || url.includes("youtu.be")) {
+                          return `<span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-brands fa-youtube"></i> <span style="text-decoration:underline;">YouTube</span></span>`;
+                        }
+                        return `<span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-link"></i> <span style="text-decoration:underline;">ลิ้งค์อื่นๆ</span></span>`;
+                      })()}
+                    </a>
+                  `
+                )
+                .join("")}
+            </div>
+          `
+          : ""
+        }
       </div>
     `,
     showCloseButton: true,
