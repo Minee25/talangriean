@@ -18,6 +18,7 @@ const subjectList = [
             links: [
               "https://www.facebook.com/groups/2401278043640275"
             ],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           }
@@ -36,6 +37,7 @@ const subjectList = [
             teacher: "รศ.ดร.สุชาติ คุ้มมะณี",
             classRoomLink: "https://classroom.google.com/c/ODE3NTIzODYyNjQ1",
             links: [],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           }
@@ -56,6 +58,7 @@ const subjectList = [
             links: [
               "https://www.facebook.com/share/g/1LBvevQxCD/"
             ],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           },
@@ -69,6 +72,7 @@ const subjectList = [
             teacher: "รศ.ดร.เกรียงศักดิ์ บุญเที่ยง, ผศ.ดร.ประภัสสร บุษหมั่น",
             classRoomLink: "https://classroom.google.com/c/ODIwMzUxNDM5ODcz",
             links: [],
+            img: "",
             bg: "#FED7AA",
             bgHover: "#C2410C",
           },
@@ -82,6 +86,7 @@ const subjectList = [
             teacher: "ผศ.ดร.อารีรัตน์ ลีละธนาฤกษ์",
             classRoomLink: "https://classroom.google.com/c/ODIyOTEwNTY5OTAw",
             links: [],
+            img: "",
             bg: "#FED7AA",
             bgHover: "#C2410C",
           }
@@ -102,6 +107,7 @@ const subjectList = [
             links: [
               "https://www.facebook.com/share/g/1LBvevQxCD/"
             ],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           },
@@ -120,6 +126,7 @@ const subjectList = [
             teacher: "อ.ดร.อรรถพล สุวรรณษา",
             classRoomLink: "https://classroom.google.com/c/ODI4MjYwNTUyNTYx",
             links: [],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           },
@@ -133,6 +140,7 @@ const subjectList = [
             teacher: "อ.ดร.เบญจวรรณ อินทระ",
             classRoomLink: "https://classroom.google.com/c/ODE3NTIzNTcwMjMw",
             links: [],
+            img: "",
             bg: "#D5E6FF",
             bgHover: "#000080",
           },
